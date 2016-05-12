@@ -1,0 +1,61 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+/// Regular font family
+/// @type List
+$text-font-stack: Verdana, Geneva sans-serif !default;
+
+///Text sizes
+$text-main-size: 12px;
+$text-secondary-size: 14px;
+$text-mid-size: 16px;
+$text-title-size: 18px;
+$text-big-size: 24px;
+
+
+// Font weights
+$light: 100 !default;
+$regular: 400 !default;
+$bold: 600 !default;
+
+// Headings
+$header-font-weight: $bold;
+
+// Base Font
+$base-font-family: sans-serif;
+$base-font-weight: $regular;
+
+
+/// Copy text color
+/// @type Color
+$main-color: #333 !default;
+
+/// Secondary text-brand color
+/// @type Color
+$secondary-color: #fff !default;
+
+/// Main brand color
+/// @type Color
+$brand-color: #fed900 !default;
+
+/// Secondary brand color
+/// @type Color
+$secondary-brand-color: #e32429 !default;
+
+/// Third brand color
+/// @type Color
+$third-brand-color: #e5e5e5 !default;
+
+///Background's color
+///@type Color
+$bg-color: $main-color;
+$bg-brand-color: $brand-color;
+$bg-sec-color: $secondary-brand-color;
+$bg-third-color: $third-brand-color;
+
+/// Container's maximum width
+/// @type Length
+$max-width: 1010px !default;
+
+
