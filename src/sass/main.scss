@@ -1,15 +1,11 @@
 @charset 'UTF-8';
 
-//Configuration and helpers
-@import
-  'abstracts/variables';
-
 //Base styles
 @import
+  'base/variables',
   'base/normalize',
   'base/base',
-  'base/typography',
-  'base/helpers';
+  'base/typography';
 
 // Layout-related sections
 @import
@@ -23,4 +19,8 @@
 //Page-specific styles
 @import
   'pages/index';
+
+//Configuration and helpers
+@import
+'utilities/helpers';
 
