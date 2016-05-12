@@ -1,0 +1,21 @@
+.main-menu {
+  height: 100px;
+  background-color: red;
+}
+.main-menu__top {
+  background-color: $brand-color;
+  height: 50px;
+}
+
+
+.aside {
+  float: left;
+  width: 25%;
+  height: 600px;
+  background-color: #dedede;
+}
+.content {
+  overflow: hidden;
+  height: 800px;
+  background-color: #ffff4f;
+}

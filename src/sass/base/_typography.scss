@@ -3,5 +3,10 @@
  */
 body {
   color: $main-color;
-  font:  $text-main-size $text-font-stack;
+  font-family: $text-font-stack;
+}
+
+p {
+  font-size: $text-main-size;
+  font-weight: $base-font-weight;
 }

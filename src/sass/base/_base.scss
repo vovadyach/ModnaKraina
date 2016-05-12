@@ -39,3 +39,14 @@ a {
     color: $main-color;
   }
 }
+
+.divider {
+  margin-top: 0;
+  margin-bottom: 2px;
+  max-width: 100%;
+  background-color: $secondary-brand-color;
+  padding: 5px 0;
+  &.divider_bottom {
+    margin-bottom: 0;
+  }
+}

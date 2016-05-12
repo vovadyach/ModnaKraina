@@ -4,7 +4,7 @@
 
 /// Regular font family
 /// @type List
-$text-font-stack: Verdana, Geneva sans-serif !default;
+$text-font-stack: Verdana, Geneva, sans-serif !default;
 
 ///Text sizes
 $text-main-size: 12px;
@@ -23,7 +23,6 @@ $bold: 600 !default;
 $header-font-weight: $bold;
 
 // Base Font
-$base-font-family: sans-serif;
 $base-font-weight: $regular;
 
 

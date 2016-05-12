@@ -1,0 +1,130 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+.header {
+  @extend .clearfix;
+  p {
+    font-weight: $bold;
+    font-size: $text-secondary-size;
+  }
+}
+.header__logo {
+  float: left;
+}
+.logo__img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.header__delivery-info {
+  float: left;
+  text-align: right;
+  padding: 0 18px;
+}
+
+.header__contact {
+  float: left;
+  p {
+    margin-bottom: 0;
+  }
+  .phone__number {
+    font-size: 30px;
+  }
+  .header__contact-phone {
+    margin: 0;
+    font-size: $text-title-size;
+    font-weight: $regular;
+  }
+  .contact__order-info {
+    a {
+      margin-left: 35px;
+      font-size: $text-secondary-size;
+      color: $secondary-brand-color;
+      border-bottom: dotted 1px $secondary-brand-color;
+    }
+    &:before {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      width: 25px;
+      margin-top: -5px;
+      height: 25px;
+      background-image: url("../../images/sprites/sprites.png");
+      background-position: 0 0;
+    }
+  }
+  .contact__link-all {
+    position: relative;
+    margin-top: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    background-color: #fed900;
+    display: block;
+    width: 120px;
+    padding: 2px 5px;
+    &:after {
+      content: '';
+      display: block;
+      width: 20px;
+      top: 2px;
+      right: 0;
+      height: 14px;
+      background-image: url("../../images/sprites/sprites.png");
+      background-position: -277px -65px;
+      position: absolute;
+    }
+  }
+}
+.header__enter {
+  position: relative;
+  display: block;
+  text-align: right;
+  font-size: $text-main-size;
+  margin-bottom: 3px;
+  &:before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    top: 0;
+    right: 35px;
+    height: 12px;
+    background-image: url("../../images/sprites/sprites.png");
+    background-position: -78px -8px;
+    position: absolute;
+  }
+}
+.header__shopping-cart {
+  float: right;
+}
+.shopping__cart {
+  padding: 4px 15px;
+  border: 5px solid $brand-color;
+  .cart__title {
+    position: relative;
+    margin-top: 12px;
+    margin-bottom: 0;
+    margin-left: 32px;
+    border-bottom: dotted 2px;
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 30px;
+      cursor: pointer;
+      top: 3px;
+      left: -42px;
+      height: 25px;
+      background-image: url("../../images/sprites/sprites.png");
+      background-position: -35px -4px;
+      position: absolute;
+    }
+  }
+  .cart__description {
+    margin-top: 5px;
+    margin-left: -8px;
+    font-weight: $regular;
+    .cart__item-quantity,
+    .cart__item-price {
+      cursor: pointer;
+    }
+  }
+}
