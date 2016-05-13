@@ -1,3 +1,4 @@
+///NEWS CONTENT BLOCK
 .layout {
   @extend .clearfix;
 }
@@ -6,14 +7,28 @@
   overflow: hidden;
 }
 .content__title {
+  float: left;
   margin: 0;
+  font-size: $text-title-size;
   text-transform: uppercase;
+}
+.date__item {
+  float: right;
+  margin-top: -6px;
+  .date__day {
+    margin: 0;
+    font-size: 35px;
+  }
+  .date__month {
+    margin: 0;
+  }
 }
 .news__content {
   @extend .clearfix;
-  padding: 40px 0 ;
+  padding: 55px 0 ;
   p {
     margin-top: 0;
+    line-height: 1.5;
   }
 }
 

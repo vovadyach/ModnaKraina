@@ -9,37 +9,9 @@
 <hr class="divider"/>
 
 <div class="container">
-    <header class="header">
-        <div class="header__logo">
-            <div class="logo__container">
-                <a href="#" class="logo__link">
-                    <img class="logo__img" src="images/logo/logo.png" alt="Logo Inc."/>
-                </a>
-            </div>
-        </div>
-        <div class="header__delivery-info">
-            <p>Доставка по всей <br/> Украине и СНГ</p>
-        </div>
-        <div class="header__contact">
-            <p>Свяжитесь с нами:</p>
-            <p class="header__contact-phone">+038 (063) <span class="phone__number">373 88 88</span></p>
-            <span class="contact__order-info">
-                <a href="#">заказать обратный звонок</a>
-            </span>
-            <a href="#"class="contact__link-all">все контакты</a>
-        </div>
-        <div class="header__shopping-cart">
-            <a class="header__enter">Войти</a>
-            <div class="shopping__cart">
-                <h2 class="cart__title">
-                    <a href="#">Ваша корзина</a>
-                </h2>
-                <p class="cart__description">
-                    <span class="cart__item-quantity">4</span> товара на
-                    <span class="cart__item-price">3 550</span> грн</p>
-            </div>
-        </div>
-    </header>
+
+  {{ include('include/header.html') }}
+
     <nav class="main-menu">
         <div class="main-menu__top">
             <ul class="menu__navigation">
@@ -149,6 +121,10 @@
         </aside>
         <div class="content">
             <h2 class="content__title">Распродажа женской одежды</h2>
+            <div class="date__item">
+                <p class="date__day">13 /</p>
+                <p class="date__month">декабря</p>
+            </div>
             <div class="news__content">
                 <div class="mews__img">
                     <img src="../images/news-image.jpg" alt=""/>
@@ -231,31 +207,13 @@
                     Adipisci assumenda at dolor eos esse fugit in iste laudantium
                     maiores necessitatibus nemo nobis numquam obcaecati possimus quisquam saepe,
                 </p>
-
             </div>
         </div>
     </div>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer__container">
-            <div class="footer__header">
-                <ul class="">
-                    <li>
-                        <a href="">Каталог</a>
-                    </li>
-                    <li>
-                        <a href="">О нас</a>
-                    </li>
-                    <li>
-                        <a href="">Сервис</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </footer>
+    {{ include('include/footer.html') }}
+
 </div>
 <hr class="divider divider_bottom"/>
-
 </body>
 </html>
