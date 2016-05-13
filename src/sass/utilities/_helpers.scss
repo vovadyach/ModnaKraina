@@ -7,9 +7,9 @@
  */
 .clearfix {
   &:after {
-    clear: both;
     content: '';
-    display: table;
+    display: block;
+    clear: both;
   }
 }
 
@@ -34,4 +34,19 @@
 }
 .active {
   display: block;
+}
+
+.divider {
+  margin-top: 0;
+  margin-bottom: 2px;
+  max-width: 100%;
+  background-color: $secondary-brand-color;
+  padding: 5px 0;
+  &.divider_bottom {
+    margin-bottom: 0;
+  }
+}
+
+.br_none {
+  border: 0 !important;
 }

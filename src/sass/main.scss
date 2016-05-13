@@ -14,11 +14,9 @@
 
 //Components
 @import
+  'components/navigation',
+  'components/block',
   'components/buttons';
-
-//Page-specific styles
-@import
-  'pages/index';
 
 //Configuration and helpers
 @import

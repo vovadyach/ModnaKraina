@@ -1,0 +1,23 @@
+.layout {
+  @extend .clearfix;
+}
+.content {
+  padding-left: 5px;
+  overflow: hidden;
+}
+.content__title {
+  margin: 0;
+  text-transform: uppercase;
+}
+.news__content {
+  @extend .clearfix;
+  padding: 40px 0 ;
+  p {
+    margin-top: 0;
+  }
+}
+
+.mews__img {
+  float: left;
+  padding-right: 12px;
+}

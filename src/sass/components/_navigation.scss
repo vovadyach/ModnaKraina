@@ -1,0 +1,133 @@
+//Main menu
+.main-menu {
+  height: 100px;
+}
+.main-menu__top {
+  margin-top: 10px;
+  background-color: $third-brand-color;
+  border-top: 3px solid $main-color;
+}
+
+.menu__navigation {
+  display: table;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+.menu__item {
+  display: table-cell;
+  text-align: center;
+  max-width: 1px;
+
+}
+.menu__link {
+  padding: 10px 0;
+  display: block;
+  font-weight: $bold;
+  text-transform: uppercase;
+}
+.main-menu__bottom {
+  margin-bottom: 10px;
+  border-top: 1px solid $main-color;
+  border-bottom: 1px solid $main-color;
+  background-color: $bg-brand-color;
+  .menu__link {
+    text-transform: none;
+  }
+  .menu__navigation {
+    @extend .clearfix;
+    display: block;
+  }
+  .menu__item {
+    display: block;
+    float: left;
+    max-width: none;
+  }
+  .menu__link {
+    padding: 10px 20px;
+  }
+  ::-webkit-input-placeholder {
+    color: $main-color;
+    font-style: italic;
+    font-size: $text-main-size;
+  }
+}
+.item_search {
+  padding: 5px;
+  width: 40%;
+  position: relative;
+}
+.menu__search-input {
+  width: 320px;
+  padding: 4px 20px;
+  outline: none;
+  border: 1px solid transparent;
+  border-radius: 25px;
+}
+.menu__search-submit {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 20px;
+  top: 2px;
+  right: -15px;
+  height: 27px;
+  border: 0;
+  background-image: url("../../images/sprites/sprites.png");
+  background-position: -106px 0;
+  -webkit-appearance:none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  &:focus {
+    outline: none;
+  }
+}
+
+//Menu aside
+.aside {
+  float: left;
+  width: 30%;
+  .menu__navigation {
+    margin-bottom: 15px;
+  }
+}
+.menu__item_aside {
+  float: none;
+  padding-right: 10px;
+  display: block;
+  max-width: none;
+  text-align: left;
+  .menu__link {
+    text-transform: none;
+    padding: 8px 12px;
+    border-bottom: 1px solid $third-brand-color;
+    font-size: $text-secondary-size;
+
+  }
+}
+.menu__item-title {
+  .menu__link {
+    background-color: $secondary-brand-color;
+    color: $secondary-color;
+    font-size: $text-title-size;
+  }
+}
+.menu__item {
+  &:last-child {
+    .menu__link {
+      border: 0;
+    }
+  }
+}
+.item_contacts {
+  margin-right: 10px;
+  background-color: $third-brand-color;
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    border-left: 6px solid #fed900;
+    height: 32px;
+  }
+}
