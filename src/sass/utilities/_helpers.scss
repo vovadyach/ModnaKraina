@@ -50,3 +50,33 @@
 .br_none {
   border: 0 !important;
 }
+.asterisk__name {
+  position: relative;
+  &:after{
+    content: '*';
+    display: block;
+    position: absolute;
+    width: 5px;
+    top: 0;
+    left: 29px;
+    color: $secondary-brand-color;
+    height: 5px;
+  }
+}
+.asterisk__email {
+  position: relative;
+  &:after {
+    content: '*';
+    display: block;
+    position: absolute;
+    width: 5px;
+    top: 0;
+    left: 39px;
+    color: $secondary-brand-color;
+    height: 5px;
+  }
+}
+.vertical_text {
+  transform: rotate(270deg);
+  transform-origin: left top 0;
+}

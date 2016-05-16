@@ -85,7 +85,7 @@
 //Menu aside
 .aside {
   float: left;
-  width: 30%;
+  width: 27%;
   .menu__navigation {
     margin-bottom: 15px;
   }
@@ -98,9 +98,9 @@
   text-align: left;
   .menu__link {
     text-transform: none;
-    padding: 8px 12px;
+    padding: 5px 12px;
     border-bottom: 1px solid $third-brand-color;
-    font-size: $text-secondary-size;
+    font-size: $text-main-size;
 
   }
 }
@@ -126,6 +126,6 @@
     display: block;
     position: absolute;
     border-left: 6px solid #fed900;
-    height: 32px;
+    padding: 11.9px 10px;
   }
 }

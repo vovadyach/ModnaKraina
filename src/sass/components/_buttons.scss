@@ -1,0 +1,13 @@
+.btn__submit {
+  outline: none;
+  display: block;
+  margin: 10px auto;
+  border: 1px solid transparent;
+  padding: 12px 40px 11px;
+}
+.btn-secondary {
+  background-color: $bg-sec-color;
+  color: $secondary-color;
+  text-transform: uppercase;
+  font-weight: $bold;
+}

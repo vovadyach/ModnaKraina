@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Catalog</title>
+    <link rel="stylesheet" href="stylesheets/style.min.css"/>
+</head>
+<body>
+<hr class="divider"/>
+<div class="container">
+    {{ include('include/header.html') }}
+    <nav class="main-menu">
+        <div class="main-menu__top">
+            <ul class="menu__navigation">
+                <li class="menu__item">
+                    <a href="#" class="menu__link">Женщинам</a>
+                </li>
+                <li class="menu__item">
+                    <a href="#" class="menu__link">Мужчинам</a>
+                </li>
+                <li class="menu__item">
+                    <a href="#" class="menu__link">Детям</a>
+                </li>
+                <li class="menu__item">
+                    <a href="#" class="menu__link">Спорт</a>
+                </li>
+                <li class="menu__item">
+                    <a href="#" class="menu__link">Обувь</a>
+                </li>
+                <li class="menu__item">
+                    <a href="#" class="menu__link">XXL</a>
+                </li>
+            </ul>
+        </div>
+        <div class="main-menu__bottom">
+            <div class="catalog__menu-bottom">
+                <ul class="menu__navigation">
+                    <li class="menu__item">
+                        <a href="#" class="menu__link open_link">Одежда</a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="#" class="menu__link">Аксессуары</a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="#" class="menu__link">Белье</a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="#"     class="menu__link">XXL</a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="#" class="menu__link">Обувь</a>
+                    </li>
+                    <li class="menu__item item_search">
+                        <form action="#">
+                            <input class="menu__search-input" type="search" name="" id="" placeholder="поиск по каталогу"/>
+                            <input class="menu__search-submit" type="submit" value=""/>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="layout">
+
+    </div>
+
+    {{ include('include/footer.html') }}
+</div>
+
+<hr class="divider"/>
+</body>
+</html>
