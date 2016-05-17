@@ -25,6 +25,7 @@
   text-transform: uppercase;
 }
 .main-menu__bottom {
+  @extend .clearfix;
   margin-bottom: 10px;
   border-top: 1px solid $main-color;
   border-bottom: 1px solid $main-color;
@@ -35,28 +36,53 @@
   .menu__navigation {
     @extend .clearfix;
     display: block;
+    width: 62%;
+    float: left;
+    padding-left: 5px;
   }
   .menu__item {
     display: block;
     float: left;
     max-width: none;
+    padding-right: 8px;
   }
   .menu__link {
-    padding: 10px 20px;
+    padding: 10px 8px;
   }
   ::-webkit-input-placeholder {
     color: $main-color;
     font-style: italic;
     font-size: $text-main-size;
   }
+  ::-moz-placeholder {
+    color: $main-color;
+    font-style: italic;
+    font-size: $text-main-size;
+  }
+
+  ::-moz-placeholder {  /* Firefox 19+ */
+    color: $main-color;
+    font-style: italic;
+    font-size: $text-main-size;
+  }
+
+  :-ms-input-placeholder {
+    color: $main-color;
+    font-style: italic;
+    font-size: $text-main-size;
+  }
+}
+.navigation__search {
+  float: right;
+  width: 38%;
 }
 .item_search {
   padding: 5px;
-  width: 40%;
+  padding-right: 40px;
   position: relative;
 }
 .menu__search-input {
-  width: 320px;
+  width: 100%;
   padding: 4px 20px;
   outline: none;
   border: 1px solid transparent;
@@ -69,7 +95,7 @@
   position: absolute;
   width: 20px;
   top: 2px;
-  right: -15px;
+  right: 12px;
   height: 27px;
   border: 0;
   background-image: url("../../images/sprites/sprites.png");

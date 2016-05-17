@@ -11,6 +11,9 @@
 .header__logo {
   float: left;
 }
+.header__info {
+  display: inline-block;
+}
 .logo__img {
   max-width: 100%;
   vertical-align: middle;
@@ -19,16 +22,19 @@
 .header__delivery-info {
   float: left;
   text-align: right;
-  padding: 0 18px;
+  padding: 0px 6px;
+  letter-spacing: -1px;
 }
 
 .header__contact {
   float: left;
+  padding: 0 8px;
   p {
     margin-bottom: 0;
   }
   .phone__number {
-    font-size: 30px;
+    font-size: 24px;
+    letter-spacing: -1px;
   }
   .header__contact-phone {
     margin: 0;
@@ -100,10 +106,12 @@
   padding: 4px 15px;
   border: 5px solid $brand-color;
   .cart__title {
+    font-weight: $regular;
     position: relative;
     margin-top: 12px;
+    font-size: 22px;
     margin-bottom: 0;
-    margin-left: 32px;
+    margin-left: 23px;
     border-bottom: dotted 2px;
     &:before {
       content: '';
@@ -111,7 +119,7 @@
       width: 30px;
       cursor: pointer;
       top: 3px;
-      left: -42px;
+      left: -37px;
       height: 25px;
       background-image: url("../../images/sprites/sprites.png");
       background-position: -35px -4px;

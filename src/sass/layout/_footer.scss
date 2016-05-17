@@ -7,13 +7,22 @@
 }
 .footer__box {
   float: left;
-  padding: 0 30px;
+  padding: 0 25px;
+  width: 33%;
+}
+.footer__right-box {
+  float: right;
+  .footer__box {
+    width: auto;
+  }
 }
 .footer__header {
   background-color: $main-color;
   height: 35px;
   margin-bottom: -30px;
-
+}
+.footer__nav  {
+  overflow: hidden;
 }
 .menu__item {
   &.footer__item {
@@ -37,7 +46,7 @@
   margin-bottom: 10px;
   font-weight: $bold;
   padding: 2px 10px;
-  font-size: $text-title-size;
+  font-size: $text-mid-size;
   background-color: $brand-color;
 }
 
@@ -100,7 +109,7 @@
   position: relative;
   padding-right: 0;
   max-width: 298px;
-  width: 100%;
+  //  width: 100%;
 }
 .footer__subscribe {
   position: absolute;
@@ -113,6 +122,12 @@
     margin: 5px 0;
   }
   ::-webkit-input-placeholder {
+    font-size: $text-main-size;
+    width: 85%;
+    font-style: italic;
+    color: $main-color;
+  }
+  ::-moz-placeholder {
     font-size: $text-main-size;
     width: 85%;
     font-style: italic;
