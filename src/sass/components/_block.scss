@@ -3,7 +3,7 @@
   @extend .clearfix;
 }
 .content {
-  padding-left: 5px;
+  padding-left: 15px;
   overflow: hidden;
 }
 .content__title {
@@ -240,5 +240,348 @@
       background-position: -219px -62px;
       margin-left: 2px;
     }
+  }
+}
+
+//ACCORDION MENU
+.accordion {
+  margin-top: 4px;
+  margin-bottom: 25px;
+}
+.accordion__menu {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.accordion__item {
+  padding: 2px 0;
+}
+.accordion__link {
+  padding: 6px 12px;
+  background-color: #fed900;
+  display: block;
+  font-size: $text-mid-size;
+  font-weight: $bold;
+  &:after {
+    content: '';
+    display: block;
+    float: right;
+    height: 18px;
+    width: 18px;
+    background-image: url("../../images/sprites/sprites.png");
+    background-position: -184px -60px;
+  }
+  &.open_link {
+    background-color: $bg-sec-color;
+    color: $secondary-color;
+    &:after {
+      content: '';
+      display: block;
+      float: right;
+      height: 18px;
+      width: 18px;
+      background-image: url("../../images/sprites/sprites.png");
+      background-position: -216px -60px;
+    }
+  }
+}
+.accordion__inner {
+  list-style-type: none;
+  padding: 0;
+}
+.inner__item {
+  border-bottom: 1px solid $third-brand-color;
+}
+.inner__link {
+  padding: 6px 12px;
+  display: block;
+  font-size: $text-main-size;
+  font-weight: $bold;
+}
+
+//FILTERING
+.filtering {
+  margin-bottom: 45px;
+}
+.filter__menu {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.filter__link {
+  padding: 6px 6px;
+  display: block;
+  border: 2px solid $secondary-brand-color;
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 15px;
+    width: 17px;
+    margin-right: 5px;
+    vertical-align: middle;
+    background-color: $bg-brand-color;
+    background-image: url("../../images/sprites/sprites.png");
+    background-position: -188px -63px;
+  }
+  &.open_link {
+    &:before {
+      content: '';
+      display: inline-block;
+      height: 15px;
+      width: 17px;
+      margin-right: 5px;
+      vertical-align: middle;
+      background-color: $secondary-brand-color;
+      background-image: url("../../images/sprites/sprites.png");
+      background-position: -219px -62px;
+    }
+  }
+}
+.filter__price-range {
+  overflow: hidden;
+  padding: 8px 0 8px 8px;
+  span {
+    font-size: 12px;
+  }
+}
+.price__input {
+  width: 22%;
+  margin-left: 5px;
+  margin-right: 10px;
+}
+.price__submit {
+  float: right;
+  border: none;
+  font-size: $text-main-size;
+  outline: 0;
+  padding: 5px 8px;;
+}
+
+.filter__size-menu {
+  overflow: auto;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.filter__size {
+  padding: 8px 0 8px 8px;
+  overflow: auto;
+  height: 250px;
+}
+.size__menu-item {
+  font-size: $text-main-size;
+  padding: 5px 0;
+}
+
+//CHECKBOX
+input[type="checkbox"] {
+  display: none;
+}
+.checkbox__icon {
+  position: relative;
+  vertical-align: middle;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border: 1px solid #333;
+  margin-bottom: 3px;
+}
+
+input[type="checkbox"]:checked {
+  &+ .checkbox__icon {
+    .icon_decor {
+      width: 6px;
+      height: 6px;
+      position: absolute;
+      margin: auto;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      display: block;
+      background-color: #333333;
+    }
+  }
+}
+
+//COLOR FILTER
+.filter__color {
+  padding: 10px 50px 10px 25px;
+}
+.color__item {
+  padding: 14px;
+  margin: 4px;
+  display: block;
+  background-color: red;
+}
+.color__col {
+  float: left;
+  min-height: 15px;
+  position: relative;
+  padding: 0 0 5px 0px;
+  width: 20%;
+}
+
+.color-box-shadow {
+  box-shadow: 1px 1px 2px #6D6464;
+}
+.color_item-1 {
+  @extend .color-box-shadow;
+  background-color: $bg-third-color;
+  border: 1px transparent;
+}
+.color_item-2 {
+  background-color: $secondary-color;
+  border: 1px transparent;
+  @extend .color-box-shadow;
+}
+.color_item-3 {
+  background-color: cornflowerblue;
+  border: 1px transparent;
+  @extend .color-box-shadow;
+}
+.color_item-4 {
+  background-color: $bg-brand-color;
+  @extend .color-box-shadow;
+}
+.color_item-5 {
+  background-color: saddlebrown;
+  border: 1px transparent;
+  @extend .color-box-shadow;
+}
+.color_item-6 {
+  background-color: seagreen;
+  border: 1px transparent;
+  @extend .color-box-shadow;
+}
+.color_item-7 {
+  background-color: darkred;
+  border: 1px transparent;
+  @extend .color-box-shadow;
+}
+.color_item-8 {
+  background-color: salmon;
+  border: 1px transparent;
+  @extend .color-box-shadow;
+}
+.color_item-9 {
+  background-color: palevioletred;
+  border: 1px transparent;
+  @extend .color-box-shadow;
+}
+.color_item-10 {
+  background-color: mediumblue;
+  border: 1px transparent;
+  @extend .color-box-shadow;
+}
+.color_item-11 {
+  background-color: lightskyblue;
+  border: 1px transparent;
+  @extend .color-box-shadow;
+}
+.color_item-12 {
+  background-color: #333333;
+  border: 1px transparent;
+  @extend .color-box-shadow;
+}
+.color_item-13 {
+  @extend .color_item-1;
+  background-color: orangered;
+
+}
+
+.filter__reset {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.anchor__top {
+  position: relative;
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 30px;
+    margin: auto;
+    right: 0;
+    top: -30px;
+    left: 0;
+    background-image: url("../../images/sprites/sprites.png");
+    background-position: -204px -5px;
+    height: 25px;
+  }
+}
+
+.content__navigation {
+  text-decoration: underline;
+  font-size: $text-secondary-size;
+}
+.breadcrumb__current {
+  font-size: $text-secondary-size;
+}
+
+.catalog__title {
+  text-transform: uppercase;
+  margin-top: 12px;
+}
+
+.sorted__by {
+  font-size: $text-secondary-size;
+  a {
+    text-decoration: underline;
+    padding-left: 5px;
+    &:hover,
+    &:focus {
+      color: $secondary-brand-color;
+    }
+  }
+}
+.sorted__by-price {
+  position: relative;
+  padding-right: 15px;
+  &:after {
+    position: absolute;
+    top: 2px;
+    right: 0;
+    display: block;
+    content: '';
+    border: 1px solid #676767;
+    height: 12px;
+
+  }
+}
+.catalog__pagination {
+  @extend .clearfix;
+  margin-top: 8px;
+}
+.pagination__box {
+  float: left;
+}
+.show__by {
+  float: right;
+}
+
+.pagination__menu {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.pagination__item {
+  display: inline-block;
+}
+.pagination__link {
+  display: block;
+  padding: 2px;
+  font-weight: $bold;
+  font-size: $text-secondary-size;
+  &:hover,
+  &:focus {
+    background-color: $bg-brand-color;
   }
 }

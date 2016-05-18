@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Catalog</title>
     <link rel="stylesheet" href="stylesheets/style.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 </head>
 <body>
 <hr class="divider"/>
@@ -52,16 +53,341 @@
                     </li>
                 </ul>
                 <div class="navigation__search item_search">
-                        <form action="#">
-                            <input class="menu__search-input" type="search"  placeholder="поиск по каталогу"/>
-                            <input class="menu__search-submit" type="submit" value=""/>
-                        </form>
+                    <form action="#">
+                        <input class="menu__search-input" type="search"  placeholder="поиск по каталогу"/>
+                        <input class="menu__search-submit" type="submit" value=""/>
+                    </form>
                 </div>
             </div>
         </div>
     </nav>
     <div class="layout">
-
+        <div class="aside">
+            <div class="accordion">
+                <ul class="accordion__menu">
+                    <li class="accordion__item">
+                        <a href="#" class="accordion__link open_link">Для женщин</a>
+                        <ul class="accordion__inner">
+                            <li class="inner__item">
+                                <a href="#" class="inner__link">Верхняя одежда</a>
+                            </li>
+                            <li class="inner__item">
+                                <a href="#" class="inner__link">Платья, туники, блузы</a>
+                            </li>
+                            <li class="inner__item">
+                                <a href="#" class="inner__link">Кофты, свитера, батники, пиджаки</a>
+                            </li>
+                            <li class="inner__item">
+                                <a href="#" class="inner__link">Футболки, майки</a>
+                            </li>
+                            <li class="inner__item">
+                                <a href="#" class="inner__link">Спортивная одежда</a>
+                            </li>
+                            <li class="inner__item">
+                                <a href="#" class="inner__link">Брюки, лосины, капри, юбки</a>
+                            </li>
+                            <li class="inner__item">
+                                <a href="#" class="inner__link">Нижнее белье</a>
+                            </li>
+                            <li class="inner__item">
+                                <a href="#" class="inner__link">Домашние костюмы и пижамы</a>
+                            </li>
+                            <li class="inner__item">
+                                <a href="#" class="inner__link">Платья, туники, блузы</a>
+                            </li>
+                            <li class="inner__item">
+                                <a href="#" class="inner__link">Кофты, свитера, батники, пиджаки</a>
+                            </li>
+                            <li class="inner__item">
+                                <a href="#" class="inner__link">Футболки, майки</a>
+                            </li>
+                            <li class="inner__item">
+                                <a href="#" class="inner__link">Спортивная одежда</a>
+                            </li>
+                            <li class="inner__item">
+                                <a href="#" class="inner__link">Брюки, лосины, капри, юбки</a>
+                            </li>
+                            <li class="inner__item">
+                                <a href="#" class="inner__link">Шорты, бермуды</a>
+                            </li>
+                            <li class="inner__item br_none">
+                                <a href="#" class="inner__link">Юбки</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="accordion__item">
+                        <a href="#" class="accordion__link">Аксессуары
+                        </a>
+                    </li>
+                    <li class="accordion__item">
+                        <a href="#" class="accordion__link">Белье</a>
+                    </li>
+                    <li class="accordion__item">
+                        <a href="#" class="accordion__link">Аксессуары</a>
+                    </li>
+                    <li class="accordion__item">
+                        <a href="#" class="accordion__link">Белье</a>
+                    </li>
+                </ul>
+            </div>
+            <form action="#">
+                <div class="filtering">
+                    <ul class="filter__menu">
+                        <li class="filter__item">
+                            <a href="#" class="filter__link open_link">Цена</a>
+                            <div class="filter__price-range">
+                                <span>от</span><input class="price__input" type="text" name="" id=""/>
+                                <span>до</span><input class="price__input" type="text" name="" id=""/>
+                                <input class="price__submit btn-secondary"  type="submit" value="Ok"/>
+                            </div>
+                        </li>
+                        <li class="filter__item">
+                            <a href="#" class="filter__link open_link">Размер</a>
+                            <div class="filter__size">
+                                <ul class="filter__size-menu">
+                                    <li class="size__menu-item">
+                                        <label>
+                                            <input class="checkbox__filter" type="checkbox"/>
+                                        <span class="checkbox__icon">
+                                            <i class="icon_decor"></i>
+                                        </span>
+                                            <span class="size__type">0</span>
+                                            <span class="size__available">(42)</span>
+                                        </label>
+                                    </li>
+                                    <li class="size__menu-item">
+                                        <label>
+                                            <input class="checkbox__filter" type="checkbox"/>
+                                        <span class="checkbox__icon">
+                                            <i class="icon_decor"></i>
+                                        </span>
+                                            <span class="size__type">0</span>
+                                            <span class="size__available">(42)</span>
+                                        </label>
+                                    </li>
+                                    <li class="size__menu-item">
+                                        <label>
+                                            <input class="checkbox__filter" type="checkbox"/>
+                                        <span class="checkbox__icon">
+                                            <i class="icon_decor"></i>
+                                        </span>
+                                            <span class="size__type">0</span>
+                                            <span class="size__available">(42)</span>
+                                        </label>
+                                    </li>
+                                    <li class="size__menu-item">
+                                        <label>
+                                            <input class="checkbox__filter" type="checkbox"/>
+                                        <span class="checkbox__icon">
+                                            <i class="icon_decor"></i>
+                                        </span>
+                                            <span class="size__type">0</span>
+                                            <span class="size__available">(42)</span>
+                                        </label>
+                                    </li>
+                                    <li class="size__menu-item">
+                                        <label>
+                                            <input class="checkbox__filter" type="checkbox"/>
+                                        <span class="checkbox__icon">
+                                            <i class="icon_decor"></i>
+                                        </span>
+                                            <span class="size__type">0</span>
+                                            <span class="size__available">(42)</span>
+                                        </label>
+                                    </li>
+                                    <li class="size__menu-item">
+                                        <label>
+                                            <input class="checkbox__filter" type="checkbox"/>
+                                        <span class="checkbox__icon">
+                                            <i class="icon_decor"></i>
+                                        </span>
+                                            <span class="size__type">0</span>
+                                            <span class="size__available">(42)</span>
+                                        </label>
+                                    </li>
+                                    <li class="size__menu-item">
+                                        <label>
+                                            <input class="checkbox__filter" type="checkbox"/>
+                                        <span class="checkbox__icon">
+                                            <i class="icon_decor"></i>
+                                        </span>
+                                            <span class="size__type">0</span>
+                                            <span class="size__available">(42)</span>
+                                        </label>
+                                    </li>
+                                    <li class="size__menu-item">
+                                        <label>
+                                            <input class="checkbox__filter" type="checkbox"/>
+                                        <span class="checkbox__icon">
+                                            <i class="icon_decor"></i>
+                                        </span>
+                                            <span class="size__type">0</span>
+                                            <span class="size__available">(42)</span>
+                                        </label>
+                                    </li>
+                                    <li class="size__menu-item">
+                                        <label>
+                                            <input class="checkbox__filter" type="checkbox"/>
+                                        <span class="checkbox__icon">
+                                            <i class="icon_decor"></i>
+                                        </span>
+                                            <span class="size__type">0</span>
+                                            <span class="size__available">(42)</span>
+                                        </label>
+                                    </li>
+                                    <li class="size__menu-item">
+                                        <label>
+                                            <input class="checkbox__filter" type="checkbox"/>
+                                        <span class="checkbox__icon">
+                                            <i class="icon_decor"></i>
+                                        </span>
+                                            <span class="size__type">0</span>
+                                            <span class="size__available">(42)</span>
+                                        </label>
+                                    </li>
+                                    <li class="size__menu-item">
+                                        <label>
+                                            <input class="checkbox__filter" type="checkbox"/>
+                                        <span class="checkbox__icon">
+                                            <i class="icon_decor"></i>
+                                        </span>
+                                            <span class="size__type">0</span>
+                                            <span class="size__available">(42)</span>
+                                        </label>
+                                    </li>
+                                    <li class="size__menu-item">
+                                        <label>
+                                            <input class="checkbox__filter" type="checkbox"/>
+                                        <span class="checkbox__icon">
+                                            <i class="icon_decor"></i>
+                                        </span>
+                                            <span class="size__type">0</span>
+                                            <span class="size__available">(42)</span>
+                                        </label>
+                                    </li>
+                                    <li class="size__menu-item">
+                                        <label>
+                                            <input class="checkbox__filter" type="checkbox"/>
+                                        <span class="checkbox__icon">
+                                            <i class="icon_decor"></i>
+                                        </span>
+                                            <span class="size__type">0</span>
+                                            <span class="size__available">(42)</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="filter__item">
+                            <a href="#" class="filter__link open_link">Цвет</a>
+                            <div class="filter__color">
+                                <div class="row">
+                                    <div class="color__col">
+                                        <a class="color__item color_item-1"></a>
+                                    </div>
+                                    <div class="color__col">
+                                        <a class="color__item color_item-2"></a>
+                                    </div>
+                                    <div class="color__col">
+                                        <a class="color__item color_item-3"></a>
+                                    </div>
+                                    <div class="color__col">
+                                        <a class="color__item color_item-4"></a>
+                                    </div>
+                                    <div class="color__col">
+                                        <a class="color__item color_item-5"></a>
+                                    </div>
+                                    <div class="color__col">
+                                        <a class="color__item color_item-6"></a>
+                                    </div>
+                                    <div class="color__col">
+                                        <a class="color__item color_item-7"></a>
+                                    </div>
+                                    <div class="color__col">
+                                        <a class="color__item color_item-8"></a>
+                                    </div>
+                                    <div class="color__col">
+                                        <a class="color__item color_item-9"></a>
+                                    </div>
+                                    <div class="color__col">
+                                        <a class="color__item color_item-10"></a>
+                                    </div>
+                                    <div class="color__col">
+                                        <a class="color__item color_item-11"></a>
+                                    </div>
+                                    <div class="color__col">
+                                        <a class="color__item color_item-12"></a>
+                                    </div>
+                                    <div class="color__col">
+                                        <a class="color__item color_item-13"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="filter__reset">
+                        <input class="btn__reset btn-primary" type="reset" value="Сбросить сортировки"/>
+                    </div>
+                </div>
+            </form>
+            <a href="#" class="anchor__top">Наверх</a>
+        </div>
+        <div class="content">
+            <a href="index.html" class="content__navigation">Главная</a>
+            <span class="content__breadcrumb">&raquo;</span>
+            <span class="breadcrumb__current">Одежда для женщин</span>
+            <h3 class="catalog__title">Одежда для женщин</h3>
+            <span class="sorted__by">Сортировать по:
+                <a href="#" class="sorted__by-price">цене</a>
+                <a href="#" class="sorrted__by-update">обновлению</a>
+            </span>
+            <div class="catalog__pagination">
+                <div class="pagination__box">
+                    <ul class="pagination__menu">
+                        <li class="pagination__item">
+                            <a href="#" class="pagination__link">1</a>
+                        </li>
+                        <li class="pagination__item">
+                            <a href="#" class="pagination__link">2</a>
+                        </li>
+                        <li class="pagination__item">
+                            <a href="#" class="pagination__link">3</a>
+                        </li>
+                        <li class="pagination__item">
+                            <a href="#" class="pagination__link">4</a>
+                        </li>
+                        <li class="pagination__item">
+                            <a href="#" class="pagination__link">5</a>
+                        </li>
+                        <li class="pagination__item">
+                            <a href="#" class="pagination__link">6</a>
+                        </li>
+                        <li class="pagination__item">
+                            <a href="#" class="pagination__link">7</a>
+                        </li>
+                        <li class="pagination__item">
+                            <a href="#" class="pagination__link">8</a>
+                        </li>
+                        <li class="pagination__item">
+                            <a href="#" class="pagination__link">9</a>
+                        </li>
+                        <li class="pagination__item">
+                            <a href="#" class="pagination__link">10</a>
+                        </li>
+                        <li class="pagination__item">
+                            <a href="#" class="pagination__link">11</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="show__by">
+                    <span class="sorted__by">Показать по:
+                        <a href="#" class="sorted__by-price">50</a>
+                        <a href="#" class="sorted__by-price">100</a>
+                        <a href="#" class="sorrted__by-update">Все</a>
+                    </span>
+                </div>
+            </div>
+        </div>
     </div>
 
     {{ include('include/footer.html') }}

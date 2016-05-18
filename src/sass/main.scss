@@ -15,10 +15,11 @@
 
 // Layout-related sections
 @import
-"layout/header",
-"layout/footer";
+  "layout/grid",
+  "layout/header",
+  "layout/footer";
 
 //Configuration and helpers
 @import
-'utilities/helpers';
+  'utilities/helpers';
 

@@ -11,3 +11,16 @@
   text-transform: uppercase;
   font-weight: $bold;
 }
+
+.btn__reset {
+  padding: 4px 24px;
+  font-size: $text-main-size;
+  font-weight: $bold;
+  outline: none;
+  border: 0;
+}
+
+.btn-primary {
+  background-color: $bg-brand-color;
+  color: $main-color;
+}

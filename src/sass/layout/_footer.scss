@@ -1,6 +1,9 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
+.footer {
+  margin-top: 40px;
+}
 .footer__container {
   @extend .clearfix;
   padding-bottom: 10px;
