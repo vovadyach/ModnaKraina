@@ -645,5 +645,71 @@ input[type="checkbox"]:checked {
   margin-top: 40px;
   border-top: 4px solid #333;
   border-bottom: 4px solid #333;
-  padding: 10px;
+  padding: 30px 28px 80px;
+}
+.catalog__slider {
+  position: relative;
+  .slick-dotted {
+    &.slick-slider {
+      margin-bottom: 20px;
+    }
+  }
+  .slick-prev:before,
+  .slick-next:before {
+    color: $main-color;
+  }
+
+  .slick-next:before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 30px;
+    background-image: url("../../images/sprites/sprites.png");
+    background-position: -57px -59px;
+  }
+  .slick-prev:before{
+    content: '';
+    display: block;
+    width: 20px;
+    height: 33px;
+    background-image: url("../../images/sprites/sprites.png");
+    background-position: -12px -59px;
+  }
+}
+
+//ABOUT
+.about-container {
+  padding: 15px;
+}
+.about__logo {
+  float: left;
+}
+.about__description {
+  overflow: hidden;
+  padding-left: 30px;
+  text-align: justify;
+}
+.about__title {
+  margin-top: 0;
+
+}
+.logo__mini {
+  max-width: 100%;
+  vertical-align: middle;
+}
+.catalog__viewed-info {
+  position: absolute;
+  top: -17px;
+  left: 0;
+  right: 0;
+  max-width: 240px;
+  margin: auto;
+}
+.viewed__link {
+  background: $bg-brand-color;
+  padding: 5px 30px;
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
 }

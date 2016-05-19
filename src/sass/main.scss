@@ -22,4 +22,6 @@
 //Configuration and helpers
 @import
   'utilities/helpers';
-
+@import
+      '../vendor/slick-carousel/slick/slick.scss',
+      '../vendor/slick-carousel/slick/slick-theme.scss';

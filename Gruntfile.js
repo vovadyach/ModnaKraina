@@ -16,7 +16,8 @@ module.exports = function(grunt) {
                 src: [
                     'images/**/*',
                     'javascripts/**/*',
-                    'vendor/jquery/dist/jquery.min.js'
+                    'vendor/jquery/dist/jquery.min.js',
+                    'vendor/slick-carousel/slick/**/*'
                 ],
                 dest: 'build/',
                 file: 'isFile'
