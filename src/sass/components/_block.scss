@@ -1,10 +1,13 @@
 ///NEWS CONTENT BLOCK
 .layout {
   @extend .clearfix;
+  position: relative;
 }
 .content {
-  padding-left: 15px;
-  overflow: hidden;
+  padding-left: 30px;
+  /* overflow: hidden; */
+  width: 73%;
+  float: right;
 }
 .content__title {
   float: left;
@@ -497,6 +500,11 @@ input[type="checkbox"]:checked {
   text-align: center;
 }
 
+.anchor__icon {
+  position: absolute;
+  bottom: 0;
+  left: 100px;
+}
 .anchor__top {
   position: relative;
   display: block;
@@ -600,5 +608,42 @@ input[type="checkbox"]:checked {
 
 //CATALOG
 .catalog__container {
-  margin-bottom: 60px;
+  margin: 15px -12px 30px -30px;
+  [class*='col-'] {
+    /*-- our gutter --*/
+    padding: 0 0 40px 20px;
+  }
+}
+.image__container {
+  padding: 6px 12px 0 12px;
+  webkit-transition: background-color .8s ;
+  -moz-transition: background-color .8s ;
+  -o-transition: background-color .8s ;
+  transition: background-color .8s ;
+  &:hover {
+    background-color: $brand-color;
+  }
+}
+.image__item {
+  max-width: 100%;
+}
+.image__caption {
+  font-size: $text-main-size;
+  margin-bottom: 10px;
+  height: 20px;
+}
+.item__price {
+  color: $secondary-brand-color;
+  font-weight: $bold;
+  padding-bottom: 5px;
+  border-bottom: 4px solid #333;
+  display: block;
+}
+
+//CATALOG SLIDER
+.catalog__slider {
+  margin-top: 40px;
+  border-top: 4px solid #333;
+  border-bottom: 4px solid #333;
+  padding: 10px;
 }
