@@ -232,6 +232,7 @@
       background-image: url("../../images/sprites/sprites.png");
       background-position: -187px -63px;
     }
+
   }
   .open_link {
     background-color: $bg-sec-color;
@@ -293,7 +294,20 @@
   padding: 0;
 }
 .inner__item {
+  position: relative;
   border-bottom: 1px solid $third-brand-color;
+  &:hover {
+    background-color: $bg-third-color;
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      border-left: 6px solid $brand-color;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+  }
 }
 .inner__link {
   padding: 6px 12px;
@@ -645,7 +659,7 @@ input[type="checkbox"]:checked {
   margin-top: 40px;
   border-top: 4px solid #333;
   border-bottom: 4px solid #333;
-  padding: 30px 28px 80px;
+  padding: 30px 28px 60px;
 }
 .catalog__slider {
   position: relative;
