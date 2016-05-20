@@ -1,20 +1,23 @@
 ///NEWS CONTENT BLOCK
-.layout {
+.main-content {
   @extend .clearfix;
   position: relative;
 }
+
 .content {
   padding-left: 30px;
   /* overflow: hidden; */
   width: 73%;
   float: right;
 }
+
 .content__title {
   float: left;
   margin: 0;
   font-size: $text-title-size;
   text-transform: uppercase;
 }
+
 .date__item {
   float: right;
   margin-top: -6px;
@@ -26,9 +29,10 @@
     margin: 0;
   }
 }
+
 .news__content {
   @extend .clearfix;
-  padding: 55px 0 ;
+  padding: 55px 0;
   p {
     margin-top: 0;
     line-height: 1.5;
@@ -46,13 +50,14 @@
     float: none;
   }
 }
+
 .contact__phones {
   float: left;
   width: 60%;
   height: 400px;
 
-
 }
+
 .contact__feedback-form {
   overflow: hidden;
   padding-bottom: 30px;
@@ -65,6 +70,7 @@
   color: $secondary-brand-color;
   text-transform: uppercase;
 }
+
 .phones__menu {
   position: relative;
   margin: 0;
@@ -81,6 +87,7 @@
     background-position: -15px -14px;
   }
 }
+
 .phone__item {
   padding: 10px;
   &:before {
@@ -95,6 +102,7 @@
     background-position: -15px -14px;
   }
 }
+
 .contact__email {
   position: relative;
   &:before {
@@ -109,6 +117,7 @@
     background-position: -53px -14px;
   }
 }
+
 .contact__skype {
   position: relative;
   &:before {
@@ -123,6 +132,7 @@
     background-position: -92px -17px;
   }
 }
+
 .sub__contact-title {
   font-weight: $bold;
 }
@@ -134,6 +144,7 @@
   color: $secondary-brand-color;
   border-bottom: 1px dotted $secondary-brand-color;
 }
+
 .contact__address {
   padding-right: 35px;
 }
@@ -146,9 +157,11 @@
     font-style: italic;
   }
 }
+
 .textarea__input {
   resize: none;
 }
+
 .contact__input {
   width: 100%;
   padding: 2px 5px;
@@ -163,11 +176,13 @@
   }
   margin-bottom: 60px;
 }
+
 .map__element {
   padding-top: 5px;
   border-top: 4px solid $main-color;
   border-bottom: 1px solid $main-color;
 }
+
 .container__comments {
   position: fixed;
   padding: 9px 8px;
@@ -182,6 +197,7 @@
   left: 0;
   text-align: center;
 }
+
 .comments__text {
   font-weight: $bold;
   text-transform: uppercase;
@@ -219,9 +235,39 @@
     }
   }
   .menu__item {
+    position: relative;
     padding: 5px 5px 5px 14px;
+    &:hover {
+      .menu__link {
+        background-color: $bg-sec-color;
+        color: $secondary-color;
+        &:before {
+          background-color: $bg-sec-color;
+          
+        }
+        &:after {
+          content: '';
+          display: inline-block;
+          background-image: url("../../images/sprites/sprites.png");
+          background-position: -247px -64px;
+
+        }
+      }
+    }
   }
   .menu__link {
+    &:before {
+      transition: 0.15s;
+      position: absolute;
+      content: '';
+      display: block;
+      top: 29px;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background-color: transparent;
+    }
+    position: relative;
     padding: 5px 5px;
     &:after {
       content: '';
@@ -232,17 +278,53 @@
       background-image: url("../../images/sprites/sprites.png");
       background-position: -187px -63px;
     }
-
+    &.open_link {
+      background-color: $bg-sec-color;
+      color: $secondary-color;
+      &:after {
+        content: '';
+        display: inline-block;
+        background-image: url("../../images/sprites/sprites.png");
+        background-position: -219px -62px;
+      }
+    }
   }
-  .open_link {
-    background-color: $bg-sec-color;
-    color: $secondary-color;
-    &:after {
-      content: '';
-      display: inline-block;
-      background-image: url("../../images/sprites/sprites.png");
-      background-position: -219px -62px;
-      margin-left: 2px;
+}
+
+.dropdown__menu {
+  position: absolute;
+  display: none;
+  top: 39px;
+  left: 14px;
+  z-index: 10;
+  width: 220px;
+  background-color: $secondary-color;
+  list-style: none;
+  padding: 5px 5px;
+  margin: 0;
+  border: 3px solid $bg-sec-color;
+}
+.dropdown__item {
+  border-bottom: 1px solid $third-brand-color;
+  &:last-child {
+    border: 0;
+  }
+}
+.dropdown__link {
+  display: block;
+  padding: 7px 6px;
+  text-align: left;
+  font-size: $text-secondary-size;
+  font-weight: $bold;
+  &:hover {
+    background-color: $bg-third-color;
+  }
+}
+
+.menu__item {
+  &:hover {
+    .dropdown__menu {
+      display: block;
     }
   }
 }
@@ -252,14 +334,17 @@
   margin-top: 4px;
   margin-bottom: 25px;
 }
+
 .accordion__menu {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
+
 .accordion__item {
   padding: 2px 0;
 }
+
 .accordion__link {
   padding: 6px 12px;
   background-color: #fed900;
@@ -289,14 +374,24 @@
     }
   }
 }
+
 .accordion__inner {
   list-style-type: none;
   padding: 0;
 }
+
 .inner__item {
   position: relative;
   border-bottom: 1px solid $third-brand-color;
-  &:hover {
+}
+
+.inner__link {
+  padding: 6px 12px;
+  display: block;
+  font-size: $text-main-size;
+  font-weight: $bold;
+  &:hover,
+  &:focus {
     background-color: $bg-third-color;
     &:before {
       content: '';
@@ -305,21 +400,16 @@
       border-left: 6px solid $brand-color;
       top: 0;
       bottom: 0;
-      margin: auto;
+      left: 0;
     }
   }
-}
-.inner__link {
-  padding: 6px 12px;
-  display: block;
-  font-size: $text-main-size;
-  font-weight: $bold;
 }
 
 //FILTERING
 .filtering {
   margin-bottom: 45px;
 }
+
 .filter__menu {
   padding: 0;
   margin: 0;
@@ -355,6 +445,7 @@
     }
   }
 }
+
 .filter__price-range {
   overflow: hidden;
   padding: 8px 0 8px 8px;
@@ -362,11 +453,13 @@
     font-size: 12px;
   }
 }
+
 .price__input {
   width: 22%;
   margin-left: 5px;
   margin-right: 10px;
 }
+
 .price__submit {
   float: right;
   border: none;
@@ -381,11 +474,13 @@
   padding: 0;
   list-style: none;
 }
+
 .filter__size {
   padding: 8px 0 8px 8px;
   overflow: auto;
   height: 250px;
 }
+
 .size__menu-item {
   font-size: $text-main-size;
   padding: 5px 0;
@@ -395,6 +490,7 @@
 input[type="checkbox"] {
   display: none;
 }
+
 .checkbox__icon {
   position: relative;
   vertical-align: middle;
@@ -407,7 +503,7 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked {
-  &+ .checkbox__icon {
+  & + .checkbox__icon {
     .icon_decor {
       width: 6px;
       height: 6px;
@@ -427,12 +523,14 @@ input[type="checkbox"]:checked {
 .filter__color {
   padding: 10px 50px 10px 25px;
 }
+
 .color__item {
   padding: 14px;
   margin: 4px;
   display: block;
   background-color: red;
 }
+
 .color__col {
   float: left;
   min-height: 15px;
@@ -444,65 +542,78 @@ input[type="checkbox"]:checked {
 .color-box-shadow {
   box-shadow: 1px 1px 2px #6D6464;
 }
+
 .color_item-1 {
   @extend .color-box-shadow;
   background-color: $bg-third-color;
   border: 1px transparent;
 }
+
 .color_item-2 {
   background-color: $secondary-color;
   border: 1px transparent;
   @extend .color-box-shadow;
 }
+
 .color_item-3 {
   background-color: cornflowerblue;
   border: 1px transparent;
   @extend .color-box-shadow;
 }
+
 .color_item-4 {
   background-color: $bg-brand-color;
   @extend .color-box-shadow;
 }
+
 .color_item-5 {
   background-color: saddlebrown;
   border: 1px transparent;
   @extend .color-box-shadow;
 }
+
 .color_item-6 {
   background-color: seagreen;
   border: 1px transparent;
   @extend .color-box-shadow;
 }
+
 .color_item-7 {
   background-color: darkred;
   border: 1px transparent;
   @extend .color-box-shadow;
 }
+
 .color_item-8 {
   background-color: salmon;
   border: 1px transparent;
   @extend .color-box-shadow;
 }
+
 .color_item-9 {
   background-color: palevioletred;
   border: 1px transparent;
   @extend .color-box-shadow;
 }
+
 .color_item-10 {
   background-color: mediumblue;
   border: 1px transparent;
   @extend .color-box-shadow;
 }
+
 .color_item-11 {
   background-color: lightskyblue;
   border: 1px transparent;
   @extend .color-box-shadow;
 }
+
 .color_item-12 {
   background-color: #333333;
   border: 1px transparent;
   @extend .color-box-shadow;
 }
+
 .color_item-13 {
   @extend .color_item-1;
   background-color: orangered;
@@ -519,6 +630,7 @@ input[type="checkbox"]:checked {
   bottom: 0;
   left: 100px;
 }
+
 .anchor__top {
   position: relative;
   display: block;
@@ -544,6 +656,7 @@ input[type="checkbox"]:checked {
   text-decoration: underline;
   font-size: $text-secondary-size;
 }
+
 .breadcrumb__current {
   font-size: $text-secondary-size;
 }
@@ -564,6 +677,7 @@ input[type="checkbox"]:checked {
     }
   }
 }
+
 .sorted__by-price,
 .shown__by-item {
   position: relative;
@@ -579,13 +693,16 @@ input[type="checkbox"]:checked {
 
   }
 }
+
 .catalog__pagination {
   @extend .clearfix;
   margin-top: 8px;
 }
+
 .pagination__box {
   float: left;
 }
+
 .show__by {
   float: right;
 }
@@ -595,9 +712,11 @@ input[type="checkbox"]:checked {
   margin: 0;
   list-style: none;
 }
+
 .pagination__item {
   display: inline-block;
 }
+
 .pagination__link {
   display: block;
   padding: 2px;
@@ -608,6 +727,7 @@ input[type="checkbox"]:checked {
     background-color: $bg-brand-color;
   }
 }
+
 .show__by-group {
   font-size: $text-secondary-size;
   a {
@@ -628,24 +748,28 @@ input[type="checkbox"]:checked {
     padding: 0 0 40px 20px;
   }
 }
+
 .image__container {
   padding: 6px 12px 0 12px;
-  webkit-transition: background-color .8s ;
-  -moz-transition: background-color .8s ;
-  -o-transition: background-color .8s ;
-  transition: background-color .8s ;
+  webkit-transition: background-color .8s;
+  -moz-transition: background-color .8s;
+  -o-transition: background-color .8s;
+  transition: background-color .8s;
   &:hover {
     background-color: $brand-color;
   }
 }
+
 .image__item {
   max-width: 100%;
 }
+
 .image__caption {
   font-size: $text-main-size;
   margin-bottom: 10px;
   height: 20px;
 }
+
 .item__price {
   color: $secondary-brand-color;
   font-weight: $bold;
@@ -661,6 +785,7 @@ input[type="checkbox"]:checked {
   border-bottom: 4px solid #333;
   padding: 30px 28px 60px;
 }
+
 .catalog__slider {
   position: relative;
   .slick-dotted {
@@ -681,7 +806,7 @@ input[type="checkbox"]:checked {
     background-image: url("../../images/sprites/sprites.png");
     background-position: -57px -59px;
   }
-  .slick-prev:before{
+  .slick-prev:before {
     content: '';
     display: block;
     width: 20px;
@@ -695,22 +820,27 @@ input[type="checkbox"]:checked {
 .about-container {
   padding: 15px;
 }
+
 .about__logo {
   float: left;
 }
+
 .about__description {
   overflow: hidden;
   padding-left: 30px;
   text-align: justify;
 }
+
 .about__title {
   margin-top: 0;
 
 }
+
 .logo__mini {
   max-width: 100%;
   vertical-align: middle;
 }
+
 .catalog__viewed-info {
   position: absolute;
   top: -17px;
@@ -719,6 +849,7 @@ input[type="checkbox"]:checked {
   max-width: 240px;
   margin: auto;
 }
+
 .viewed__link {
   background: $bg-brand-color;
   padding: 5px 30px;
@@ -727,3 +858,5 @@ input[type="checkbox"]:checked {
   font-weight: 600;
   text-align: center;
 }
+
+//PRODUCT PAGE

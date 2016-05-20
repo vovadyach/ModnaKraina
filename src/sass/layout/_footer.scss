@@ -40,7 +40,8 @@
       font-weight: $bold;
       text-transform: none;
       padding: 5px 11px;
-      &:hover {
+      &:hover,
+      &:focus {
         background-color: $bg-sec-color;
       }
     }
