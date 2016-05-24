@@ -1403,11 +1403,11 @@ input[type="checkbox"]:checked {
     color: #000;
   }
   .slick-prev {
-    left: 0;
+    left: 10px;
     z-index: 20;
   }
   .slick-next {
-    right: 0;
+    right: 10px;
     z-index: 20;
   }
   .slick-next:before {
