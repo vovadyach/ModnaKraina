@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ваша свадьба</title>
+    <link rel="stylesheet" href="stylesheets/style.min.css"/>
+    <link rel="stylesheet" href="vendor/slick-carousel/slick/slick.css"/>
+    <link rel="stylesheet" href="vendor/slick-carousel/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+</head>
+<body>
+<hr class="divider"/>
+<div class="container">
+    {{ include('include/header.html') }}
+    {{ include('include/navigation.html') }}
+
+    <div class="main-content">
+        <div class="aside">
+            {{ include('include/asidenavigation.html') }}
+        </div>
+
+        <div class="content">
+            <div class="gallery__breadcrumb">
+                <a href="gallery.html" class="breadcrumb__wedding">
+                    <span class="breadcrumb__current">Вернуться в фотогалерею</span>
+                </a>
+            </div>
+            <h3 class="content__gallery-title">ваша свадьба</h3>
+            <div class="slider__for-gallery">
+                <div><img src="../images/products/img-1.jpg" alt=""/></div>
+                <div><img src="../images/products/img-2.jpg" alt=""/></div>
+                <div><img src="../images/products/img-3.jpg" alt=""/></div>
+                <div><img src="../images/products/img-4.jpg" alt=""/></div>
+                <div><img src="../images/products/img-5.jpg" alt=""/></div>
+                <div><img src="../images/products/img-6.jpg" alt=""/></div>
+                <div><img src="../images/products/img-7.jpg" alt=""/></div>
+                <div><img src="../images/products/img-8.jpg" alt=""/></div>
+            </div>
+            <div class="slider__nav-gallery">
+                <div class="slider__image">
+                    <img class="slider__img-item" src="images/small-1.jpg" alt="Slider Image"/>
+                </div>
+                <div class="slider__image">
+                    <img class="slider__img-item" src="images/small-2.jpg" alt="Slider Image"/>
+                </div>
+                <div class="slider__image">
+                    <img class="slider__img-item" src="images/small-4.jpg" alt="Slider Image"/>
+                </div>
+                <div class="slider__image">
+                    <img class="slider__img-item" src="images/small-5.jpg" alt="Slider Image"/>
+                </div>
+                <div class="slider__image">
+                    <img class="slider__img-item" src="images/small-1.jpg" alt="Slider Image"/>
+                </div>
+                <div class="slider__image">
+                    <img class="slider__img-item" src="images/small-1.jpg" alt="Slider Image"/>
+                </div>
+                <div class="slider__image">
+                    <img class="slider__img-item" src="images/small-2.jpg" alt="Slider Image"/>
+                </div>
+                <div class="slider__image">
+                    <img class="slider__img-item" src="images/small-4.jpg" alt="Slider Image"/>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    {{ include('include/footer.html') }}
+</div>
+<hr class="divider"/>
+<script src="vendor/jquery/dist/jquery.min.js"></script>
+<script src="vendor/slick-carousel/slick/slick.min.js"></script>
+<script src="javascripts/productSlider.js"></script>
+</body>
+</html>

@@ -34,13 +34,24 @@ $(document).ready(function () {
         arrows: true,
         infinite: true
     });
-    //$('.color__chosen-slider').on('click', '.slick-slide', callBack);
-    //$('.slider__img-item').on('click', function(){
-    //    //var $this = $(this);
-    //    //var $parentslider = $this.closest('.color__chosen-slider');
-    //    //var $slide = $parentslider.find('.slider__img-item');
-    //    //
-    //    //$slide.toggleClass("slick-current");
-    //    var currentSlide = $('.slider__img-item').slick('slick-current');
-    //});
+});
+
+$(document).ready(function () {
+    $('.slider__for-gallery').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        fade: true,
+        asNavFor: '.slider__nav-gallery'
+    });
+
+    $('.slider__nav-gallery').slick({
+        slidesToShow: 7,
+        slidesToScroll: 1,
+        asNavFor: '.slider__for-gallery',
+        dots: false,
+        arrows: true,
+        adaptiveHeight: true
+    });
+
 });
