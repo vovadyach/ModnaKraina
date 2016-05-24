@@ -48,7 +48,21 @@
                 <form action="#">
                     <div class="order__box">
                         <div class="short__form-content">
-                            sdknglsdnl
+                            <div class="row">
+                                <p class="phone__title">Контактный телефон</p>
+                                <div class="col-sm-2">
+                                    <input class="phone__number-first btn_block" type="text" name="" id=""/>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input class="phone__number-second btn_block" type="text" name="" id=""/>
+                                </div>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Architecto debitis dolor facere fugit ipsum iure nam, nihil nostrum
+                                officia possimus quasi quidem rerum sapiente, suscipit tempora tempore,
+                                ullam! Dolores, omnis!
+                            </p>
+
                             <div class="order__submit">
                                 <input class="btn__order btn-secondary" type="submit" value="Подтвердить и заказать" />
                             </div>
@@ -57,12 +71,49 @@
                     <h3 class="extend__form-title">Расширенная форма заказа</h3>
                     <div class="order__box">
                         <div class="extend__form-content">
-                            dgksjokgn
+                          <div class="extended__wrapper">
+                              <div class="extended__left">
+                                  <label class="name__label"><span class="extended__field required_field">ФИО</span></label>
+                                  <input class="extended__input" type="text" name="" id=""/>
+
+                                  <label class="phone__label"><span class="extended__field required_field">Телефон</span></label>
+                                  <input class="extended__input" type="text" name="" id=""/>
+
+                                  <label class="address__label">
+                                      <span class="extended__field required_field">Адрес доставки<br/></span>
+                                      <span class="address__addition">(город, улица,<br/>дом, подъезд,<br/>квартира)</span>
+                                  </label>
+                                  <textarea class="extended__input extended_textarea"></textarea>
+                                  <p class="extended__calculation">
+                                      <a class="calculation__link" href="">Расчет стоимости доставки</a>
+                                  </p>
+                              </div>
+                              <div class="extended__right">
+                                  <label class="extended__select-title required_field">Способ доставки</label>
+                                  <select class="select__menu">
+                                      <option value="" class="select__item">Доставка на дом (курьером)</option>
+                                      <option value="" class="select__item">Доставка на дом курьером</option>
+                                      <option value="" class="select__item">Доставка на дом курьером</option>
+                                      <option value="" class="select__item">Доставка на дом курьером</option>
+                                  </select>
+                                  <label class="extended__select-title required_field">Способ оплаты</label>
+                                      <select class="select__menu">
+                                          <option value="" class="select__item">Наличными</option>
+                                          <option value="" class="select__item">Кредитка</option>
+
+                                      </select>
+                                  <p class="delivery__cost">Доставка от 30 грн.</p>
+                              </div>
+                          </div>
                             <div class="order__submit">
                                 <input class="btn__order btn-secondary" type="submit" value="Подтвердить и заказать" />
                             </div>
                         </div>
                     </div>
+                    <p class="extended__order-notification">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dolorem earum
+                        eum exercitationem facilis, libero nulla quasi reprehenderit
+                       <a  href="#" class="extended__order-link">расширенной формой заказа</a>
+                    </p>
                 </form>
 
             </div>

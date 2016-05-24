@@ -1246,3 +1246,116 @@ input[type="checkbox"]:checked {
 .order__submit {
   text-align: center;
 }
+.short__form-content,
+.extend__form-content{
+  padding: 15px;
+}
+//FORMs
+.phone__number-second,
+.phone__number-first {
+  padding: 4px 8px;
+}
+
+.phone__title {
+  float: left;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.extended__order-notification {
+  font-weight: $bold;
+  position: relative;
+  padding: 0 20px;
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 6px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: $brand-color;
+  }
+}
+.extended__order-link {
+  text-decoration: underline;
+  color: $secondary-brand-color;
+}
+.extended__input {
+  display: block;
+  width: 250px;
+  margin-bottom: 12px;
+  max-width: 100%;
+}
+.name__label,
+.phone__label,
+.address__label {
+  display: block;
+  float: left;
+  margin-top: 5px;
+  width: 118px;
+  font-size: $text-main-size;
+  font-style: italic;
+
+}
+.extended_textarea {
+  resize: none;
+  height: 80px;
+  overflow: auto;
+}
+.extended__left {
+  float: left;
+  width: 60%;
+}
+.extended__right {
+  float: right;
+  margin-right: 10px;
+}
+.extended__wrapper {
+  @extend .clearfix;
+  margin-bottom: 10px;
+}
+.address__addition {
+  font-size: 10px;
+}
+.select__menu {
+  font-size: 14px;
+  display: block;
+  margin-bottom: 15px;
+  width: 100%;
+  order:none;
+  outline:none;
+  background-color: $secondary-color;
+}
+
+.extended__select-title {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+  font-size: $text-main-size;
+  font-style: italic;
+}
+.extended__field {
+  position: relative;
+}
+
+.extended__calculation {
+  text-align: center;
+  margin-top: 8px;
+}
+.calculation__link {
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-weight: $bold;
+  display: block;
+  text-align: center;
+  margin-right: 38px;
+  text-align: right;
+}
+
+.delivery__cost {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: $bold;
+  font-size: 16px;
+  margin-top: 50px;
+}
