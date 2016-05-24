@@ -86,3 +86,14 @@
   border: 2px solid;
   margin: 1px 0;
 }
+
+&.required_field {
+  &:after {
+    position: absolute;
+    content: '*';
+    right: -10px;
+    top: 0;
+    display: block;
+    color: $secondary-brand-color;
+  }
+}

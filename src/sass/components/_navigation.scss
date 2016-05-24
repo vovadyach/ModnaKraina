@@ -118,6 +118,41 @@
   .menu__navigation {
     margin-bottom: 15px;
   }
+  .menu__item_aside {
+    .menu__link {
+      position: relative;
+      &:hover,
+      &:focus {
+        background-color: $bg-third-color;
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          border-left: 6px solid $brand-color;
+          top: 0;
+          bottom: 0;
+          left: 0;
+        }
+      }
+    }
+  }
+  .menu__item-title {
+    .menu__link {
+      &:hover,
+      &:focus {
+        background-color: $bg-sec-color;
+        &:before {
+          content: '';
+          display: none;
+          position: absolute;
+          border-left: 6px solid $brand-color;
+          top: 0;
+          bottom: 0;
+          left: 0;
+        }
+      }
+    }
+  }
 }
 .menu__item_aside {
   float: none;

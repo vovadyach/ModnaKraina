@@ -24,3 +24,36 @@
   background-color: $bg-brand-color;
   color: $main-color;
 }
+
+.btn__add-to-caret {
+  outline: none;
+  display: block;
+  font-size: $text-secondary-size;
+  padding: 8px 22px;
+  border: 1px solid transparent;
+}
+.add__comment-button {
+  outline: none;
+  display: block;
+  padding: 7px 22px;
+  border: 1px solid transparent;
+  text-transform: none;
+  &:hover,
+  &:focus {
+    color: $secondary-color;
+  }
+}
+
+.btn__comment-submit {
+  margin-top: 5px;
+  outline: none;
+  display: block;
+  font-size: $text-secondary-size;
+  padding: 5px 18px;
+  border: 1px solid transparent;
+}
+.btn__order {
+  outline: none;
+  padding: 14px 55px;
+  border: 1px solid transparent;
+}

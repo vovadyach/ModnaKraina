@@ -286,7 +286,7 @@
         content: '';
         display: inline-block;
         background-image: url("../../images/sprites/sprites.png");
-        background-position: -219p -62px;
+        background-position: -219px -62px;
       }
     }
   }
@@ -871,6 +871,7 @@ input[type="checkbox"]:checked {
   }
 }
 .content__container {
+  padding-top: 15px;
   padding-bottom: 30px;
 }
 .product__catalog-slider {
@@ -894,7 +895,6 @@ input[type="checkbox"]:checked {
     margin: 8px 0;
     padding: 12px 30px;
     padding: 12px 30px 12px 35px;
-
     .slider__image{
       .slider__img-item {
         border: 3px solid transparent;
@@ -935,7 +935,314 @@ input[type="checkbox"]:checked {
     }
   }
 }
+
 .product__description {
   float: right;
+  width: 48%;
+  padding-left: 5px;
+}
+.description__title {
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.product__description {
+  .social__menu {
+    margin-bottom: 30px;
+    .social__item {
+      padding-right: 20px;
+    }
+  }
+}
+.description__content {
+  .availability__title {
+    font-style: italic;
+    margin-bottom: 15px;
+  }
+  .retail__title,
+  .discount__title {
+    background-color: $bg-third-color;
+    font-size: $text-secondary-size;
+    font-weight: $bold;
+    padding: 2px;
+    margin-right: 10px;
+  }
+  .discount__price {
+    margin-left: 6px;
+  }
+  .discount__price {
+    font-size: 28px;
+    font-weight: $bold;
+  }
+  .discount__concrete {
+    margin-left: 15px;
+    font-style: italic;;
+  }
+  .retail__title {
+    padding-right: 27px;
+  }
+  .retail__price {
+    font-size: 32px;
+    color: $secondary-brand-color;
+  }
+  .desc__item {
+    margin: 0;
+    font-weight: $bold;
+  }
+  .vendor_code {
+    margin-bottom: 0;
+    font-weight: $bold;
+  }
+  .vendor__number,
+  .trademark__name,
+  .manufacturing__country,
+  .color__type,
+  .composition__name {
+    font-weight: $regular;
+  }
+}
+
+.description__slider-color {
+  border-top: 1px solid $main-color;
+  padding-top: 10px;
+  b {
+    font-size: $text-secondary-size;
+  }
+}
+.color__chosen-slider {
+  .slick-prev:before,
+  .slick-next:before {
+    color: $main-color;
+  }
+  .slick-next {
+    right: 140px;
+    z-index: 10;
+  }
+  .slick-prev {
+    left: 0;
+    z-index: 10;
+  }
+  .slick-next:before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 30px;
+    background-image: url("../../images/sprites/sprites.png");
+    background-position: -57px -59px;
+  }
+  .slick-prev:before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 33px;
+    background-image: url("../../images/sprites/sprites.png");
+    background-position: -12px -59px;
+  }
+  padding: 12px 160px 10px 35px;
+  .slider__image {
+    width: 90px;
+    .slider__img-item {
+      display: block;
+      width: 80px;
+      vertical-align: middle;
+      border: 3px solid transparent;
+    }
+    &.slick-current {
+      .slider__img-item {
+        border-color: $brand-color;
+      }
+    }
+  }
+}
+
+.description__size {
+  margin-top: 20px;
+}
+.description__size-title {
+  font-weight: $bold;
+  font-size: $text-secondary-size;
+}
+.size__menu {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  padding-bottom: 10px;
+
+}
+.size__item {
+  display: inline-block;
+  width: 45px;
+  margin-right: 6px;
+  text-align: center;
+
+}
+.size__link {
+  font-size: 26px;
+  display: block;
+  padding: 5px;
+  background-color: #e5e5e5;
+  &:hover {
+    background-color: $bg-brand-color;
+  }
+}
+.сolor__custom {
+  color: $secondary-brand-color;
+  text-decoration: underline;
+  font-size: $text-secondary-size;
+}
+.description__addtocart {
+  margin-top: 28px;
+  @extend .clearfix;
+}
+.add__quantity {
+  float: left;
+  margin-top: 8px;
   width: 40%;
+  span {
+    font-size: $text-main-size;
+    font-weight: $bold;
+  }
+  .product__add-input {
+    width: 50%;
+  }
+}
+.add__to-caret {
+  float: right;
+}
+.to__caret-link {
+  padding-top: 10px;
+  text-transform: uppercase;
+  text-decoration: underline;
+  font-size: $text-main-size;
+  font-weight: $bold;
+  display: block;
+  text-align: center;
+}
+.commets__title {
+  padding: 8px 12px;
+  font-weight: $bold;
+  max-width: 785px;
+  background: $bg-third-color;
+  font-size: $text-mid-size;
+}
+.add__comment {
+  float: right;
+}
+.comment__by-name,
+.comment__by-title {
+  font-weight: $bold;
+  font-size: $text-secondary-size;
+}
+.comment__by-name {
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+.comment__by-date {
+  font-size: $text-main-size;
+}
+.comment__box {
+  margin-top: 18px;
+  border-bottom: 1px solid $main-color;
+}
+
+.comments__forms {
+  padding-bottom: 35px;
+  margin-top: 40px;
+  .add__comment {
+    float: none;
+    display: inline-block;
+    margin-bottom: 10px;
+    .add__comment-button {
+      font-size: $text-secondary-size;
+    }
+  }
+}
+.comments__group {
+  @extend .clearfix;
+  padding: 20px;
+  background-color: $bg-third-color;
+  span {
+    display: inline-block;
+    width: 20%;
+    font-size: $text-main-size;
+    font-weight: $bold;
+  }
+}
+.comment__fields {
+  float: left;
+  width: 50%;
+
+}
+.your__comment {
+  float: left;
+  width: 50%;
+}
+.field__name {
+  display: inline-block;
+  width: 300px;
+}
+.name__input {
+  width: 100%;
+  padding: 2px 4px;
+}
+.field__box {
+  margin-bottom: 10px;
+}
+.box_comment {
+  @extend .clearfix;
+}
+.comment__label-title {
+  float: left;
+  padding-top: 4px;
+  margin-right: 5px;
+}
+.textarea__box {
+  display: inline-block;
+  .btn-secondary {
+    text-transform: none;
+  }
+}
+.comment__input-field {
+  resize: none;
+  width: 370px;
+  height: 115px;
+}
+.your__field-name {
+  @extend .clearfix;
+}
+.your__comment-title {
+  float: left;
+}
+
+.label__name-text,
+.label__email-text,
+.label__textarea-text {
+  position: relative;
+}
+
+//FORM ORDER PAGE
+.form__order-content {
+  margin-top: 15px;
+}
+.order__title {
+  text-transform: uppercase;
+  margin-top: 0;
+}
+.short__form-title,
+.extend__form-title {
+  color: $secondary-brand-color;
+  text-transform: uppercase;
+}
+.order__box {
+  padding: 6px 0;
+  border-top: 3px solid $main-color;
+  border-bottom: 1px solid $main-color;
+}
+.short__form-content,
+.extend__form-content {
+  background-color: $bg-third-color;
+}
+.order__submit {
+  text-align: center;
 }

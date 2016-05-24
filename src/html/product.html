@@ -61,34 +61,104 @@
                 </div>
             </div>
             <div class="product__description">
-                <p>Description</p>
+                <h2 class="description__title">Платье летнее</h2>
+                <ul class="social__menu">
+                    <li class="social__item">
+                        <a href="#" class="social__facebook"></a>
+                    </li>
+                    <li class="social__item">
+                        <a href="#" class="social__twitter"></a>
+                    </li>
+                    <li class="social__item">
+                        <a href="#" class="social__vk"></a>
+                    </li>
+                    <li class="social__item">
+                        <a href="#" class="social__od"></a>
+                    </li>
+                    <li class="social__item">
+                        <a href="#" class="social__pencil"></a>
+                    </li>
+                    <li class="social__item">
+                        <a href="#" class="social__google"></a>
+                    </li>
+                </ul>
+                <div class="description__content">
+                    <p class="availability__title">есть в наличии</p>
+                    <p class="retail__item">
+                        <span class="retail__title">розница</span>
+                        <span class="retail__price">110 грн.</span>
+                    </p>
+                    <p class="retail__discount">
+                        <span class="discount__title">со скидкой</span>
+                        <span class="discount__price">85 грн.</span>
+                        <span class="discount__concrete">при заказе размерного ряда</span>
+                    </p>
+                    <p class="desc__item vendor_code">Артикул:  <span class="vendor__number">745844</span></p>
+                    <p class="desc__item trademark_item">Торговая Марка <span class="trademark__name">Iugkbjhfsdjh</span></p>
+                    <p class="desc__item manufacturing_item">Производство: <span class="manufacturing__country">Китай</span></p>
+                    <p class="desc__item color_item-description">Цвет: <span class="color__type">белый</span></p>
+                    <p class="desc__item composition_item">Состав: <span class="composition__name">95% холопок, 5% спандекс</span></p>
+                    <p class="description__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, quasi voluptatem.
+                        Deleniti earum est necessitatibus nesciunt nihil nulla quibusdam sequi tempora temporibus
+                        voluptate. Amet cupiditate minus nulla numquam quisquam ut?
+                    </p>
+                </div>
                 <div class="description__slider-color">
-                    <ul class="social__menu">
-                        <li class="social__item">
-                            <a href="#" class="social__facebook"></a>
-                        </li>
-                        <li class="social__item">
-                            <a href="#" class="social__twitter"></a>
-                        </li>
-                        <li class="social__item">
-                            <a href="#" class="social__vk"></a>
-                        </li>
-                        <li class="social__item">
-                            <a href="#" class="social__od"></a>
-                        </li>
-                        <li class="social__item">
-                            <a href="#" class="social__pencil"></a>
-                        </li>
-                        <li class="social__item">
-                            <a href="#" class="social__google"></a>
-                        </li>
-                    </ul>
+                    <b>Выберите цвет:</b>
+                    <div class="color__chosen-slider">
+                        <div class="slider__image">
+                            <img class="slider__img-item" src="images/small-1.jpg" alt="Slider Image"/>
+                        </div>
+                        <div class="slider__image">
+                            <img class="slider__img-item" src="images/small-2.jpg" alt="Slider Image"/>
+                        </div>
+                        <div class="slider__image">
+                            <img class="slider__img-item" src="images/small-4.jpg" alt="Slider Image"/>
+                        </div>
+                        <div class="slider__image">
+                            <img class="slider__img-item" src="images/small-1.jpg" alt="Slider Image"/>
+                        </div>
+                        <div class="slider__image">
+                            <img class="slider__img-item" src="images/small-2.jpg" alt="Slider Image"/>
+                        </div>
+                        <div class="slider__image">
+                            <img class="slider__img-item" src="images/small-4.jpg" alt="Slider Image"/>
+                        </div>
+                    </div>
                 </div>
                 <div class="description__size">
-                    Size
+                    <p class="description__size-title">Размер:</p>
+                    <ul class="size__menu">
+                        <li class="size__item">
+                            <a href="#" class="size__link">L</a>
+                        </li>
+                        <li class="size__item">
+                            <a href="#" class="size__link">M</a>
+                        </li>
+                        <li class="size__item">
+                            <a href="#" class="size__link">S</a>
+                        </li>
+                        <li class="size__item">
+                            <a href="#" class="size__link">XL</a>
+                        </li>
+                        <li class="size__item">
+                            <a href="#" class="size__link">XS</a>
+                        </li>
+                    </ul>
+                    <a class="сolor__custom">Определить свой размер</a>
                 </div>
                 <div class="description__addtocart">
-                    <p>add to cart</p>
+                    <form action="#">
+                        <div class="add__quantity">
+                            <span>Количество</span>
+                            <label for="product__item"></label>
+                            <input class="product__add-input" id="product__item" type="number" value="0"/>
+                        </div>
+                        <div class="add__to-caret">
+                            <input class="btn__add-to-caret btn-secondary" type="submit" value="Добавить в Корзину"/>
+                            <a href="#" class="to__caret-link">Добавить в личный раздел</a>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -194,10 +264,135 @@
             </div>
         </div>
         <div class="product__comments">
-            <h3>Comments</h3>
-            <div class="add__comments">
-                <p>Adds comments</p>
+            <div class="add__comment">
+                <a href="#" class="add__comment-button btn-secondary">Написать отзыв</a>
             </div>
+            <div class="commets__title">
+                <a href="#" class="commets__link">Отзывы <span class="commets__quantity">(12)</span></a>
+            </div>
+            <div class="comment__box">
+                <p class="comment__by-name">Марианна, <span class="comment_by-city">Одесса</span></p>
+                <i class="comment__by-date">05 янаваря, 2013</i>
+                <p class="comment__by-title">Крутое платье!</p>
+                <p class="comment__text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    A asperiores doloribus eveniet, ipsam iusto nemo neque nisi nulla quasi tempora?
+                    Asperiores dicta eveniet excepturi minima neque nobis sunt. Nihil, officia.
+
+                </p>
+                <p class="comment__text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    A asperiores doloribus eveniet, ipsam iusto nemo neque nisi nulla quasi tempora?
+                    Asperiores dicta eveniet excepturi minima neque nobis sunt. Nihil, officia.
+
+                </p>
+            </div>
+            <div class="comment__box">
+                <p class="comment__by-name">Марианна, <span class="comment_by-city">Одесса</span></p>
+                <i class="comment__by-date">05 янаваря, 2013</i>
+                <p class="comment__by-title">Крутое платье!</p>
+                <p class="comment__text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    A asperiores doloribus eveniet, ipsam iusto nemo neque nisi nulla quasi tempora?
+                    Asperiores dicta eveniet excepturi minima neque nobis sunt. Nihil, officia.
+
+                </p>
+                <p class="comment__text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    A asperiores doloribus eveniet, ipsam iusto nemo neque nisi nulla quasi tempora?
+                    Asperiores dicta eveniet excepturi minima neque nobis sunt. Nihil, officia.
+
+                </p>
+            </div>
+            <div class="comment__box">
+                <p class="comment__by-name">Марианна, <span class="comment_by-city">Одесса</span></p>
+                <i class="comment__by-date">05 янаваря, 2013</i>
+                <p class="comment__by-title">Крутое платье!</p>
+                <p class="comment__text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    A asperiores doloribus eveniet, ipsam iusto nemo neque nisi nulla quasi tempora?
+                    Asperiores dicta eveniet excepturi minima neque nobis sunt. Nihil, officia.
+
+                </p>
+                <p class="comment__text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    A asperiores doloribus eveniet, ipsam iusto nemo neque nisi nulla quasi tempora?
+                    Asperiores dicta eveniet excepturi minima neque nobis sunt. Nihil, officia.
+
+                </p>
+            </div>
+            <div class="comment__box">
+                <p class="comment__by-name">Марианна, <span class="comment_by-city">Одесса</span></p>
+                <i class="comment__by-date">05 янаваря, 2013</i>
+                <p class="comment__by-title">Крутое платье!</p>
+                <p class="comment__text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    A asperiores doloribus eveniet, ipsam iusto nemo neque nisi nulla quasi tempora?
+                    Asperiores dicta eveniet excepturi minima neque nobis sunt. Nihil, officia.
+
+                </p>
+                <p class="comment__text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    A asperiores doloribus eveniet, ipsam iusto nemo neque nisi nulla quasi tempora?
+                    Asperiores dicta eveniet excepturi minima neque nobis sunt. Nihil, officia.
+
+                </p>
+            </div>
+        </div>
+        <div class="comments__forms">
+            <form action="#">
+                <div class="add__comment">
+                    <a href="#" class="add__comment-button btn-secondary">Ваш отзыв о товаре</a>
+                </div>
+                <div class="comments__group">
+                    <div class="comment__fields">
+                        <div class="field__box">
+                            <span class="name__label ">
+                                <label class="label__name-text required_field">Ваше имя:</label>
+                            </span>
+                            <div class="field__name">
+                                <input type="text" class="name__input"/>
+                            </div>
+                        </div>
+
+                        <div class="field__box">
+                            <span class="city__label">Город: </span>
+                            <div class="field__name">
+                                <input type="text" class="name__input"/>
+                            </div>
+                        </div>
+
+                        <div class="field__box">
+                            <span class="email__label ">
+                                <label class="label__email-text required_field">E-mail:</label>
+                            </span>
+                            <div class="field__name">
+                                <input type="email" class="name__input"/>
+                            </div>
+                        </div>
+
+                        <div class="field__box box_comment">
+                            <span class="comment__label-title">Заголовок<br/> отзыва: </span>
+                            <div class="field__name">
+                                <input type="email" class="name__input"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="your__comment">
+                        <div class="your__field-name">
+                            <span class="your__comment-title ">
+                                <label class="label__textarea-text required_field">Ваш отзыв:</label>
+                            </span>
+                            <div class="textarea__box">
+                                <textarea name="" class="comment__input-field"></textarea>
+                                <input class="btn__comment-submit btn-secondary" type="submit" value="Отправить"/>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
     {{ include('include/footer.html') }}
