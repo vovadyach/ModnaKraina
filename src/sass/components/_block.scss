@@ -629,6 +629,7 @@ input[type="checkbox"]:checked {
 .anchor__icon {
   position: absolute;
   bottom: 0;
+  z-index: 28;
   left: 100px;
 }
 
@@ -1499,5 +1500,241 @@ input[type="checkbox"]:checked {
   }
   .slick-next:before {
     content: '\203A';
+  }
+}
+
+//COMMENTS PAGE
+.comments__title {
+  margin-top: 0;
+}
+.comment__add-box {
+  @extend .clearfix;
+}
+.comment__add {
+  float: right;
+}
+.add__link {
+  display: block;
+  text-transform: uppercase;
+  font-weight: $bold;
+  padding: 15px 20px;
+  font-size: $text-secondary-size;
+  background-color: $brand-color;
+  .fa {
+    line-height: 0;
+  }
+}
+.fa-comments_align {
+  float: right;
+  margin-top: 6px;
+  margin-left: 10px;
+}
+
+.comment_content {
+  @extend .clearfix;
+}
+.comment__aside {
+  float: left;
+}
+.comment__content {
+  overflow: hidden;
+  padding-left: 30px;
+}
+.comment__title {
+  @extend .clearfix;
+  margin-bottom: 20px;
+}
+.comment__author {
+  float: left;
+  .author__name {
+    font-weight: $bold;
+  }
+}
+
+.comment__advise {
+  float: right;
+  span {
+    font-size: $text-main-size;
+    font-size: 12px;
+    padding: 2px 10px 2px 6px;
+    font-weight: $bold;
+  }
+}
+.advice__answer {
+  background-color: $brand-color;
+}
+.date__aday {
+  font-size: 40px;
+  font-weight: $regular;
+}
+.comment__date {
+  text-align: center;
+}
+.date__ayear {
+  background-color: $bg-third-color;
+}
+.comment__text {
+  border: 1px solid $third-brand-color;
+  padding: 8px 12px 18px;
+  position: relative;
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -24px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    background-image: url("../../images/sprites/comment-bubble.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+
+  }
+}
+
+.positive__text,
+.negative__text {
+  font-size: $text-main-size;
+  font-weight: $bold;
+}
+.positive__icon,
+.negative__icon {
+  float: left;
+  position: relative;
+  width: 100px;
+  padding-left: 30px;
+  &:before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 20px;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    height: 20px;
+    margin: auto;
+  }
+}
+.positive__icon {
+  &:before {
+    background-image: url("../../images/sprites/sprites.png");
+    background-position: -19px -339px;
+  } 
+}
+.negative__icon {
+  &:before {
+    background-image: url("../../images/sprites/sprites.png");
+    background-position: -59px -341px;
+  }
+}
+
+.negative__description,
+.positive__description {
+  overflow: hidden;
+  padding-left: 8px;
+}
+.positive__text-desc,
+.negative__text-desc {
+  margin-top: 5px;
+}
+.comment__positive,
+.comment__negative {
+  @extend .clearfix;
+}
+
+//POPUP
+.popup__menu {
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 30;
+  background: rgba(0, 0, 0, 0.4);
+}
+.popup__window {
+  position: relative;
+  width: 780px;
+  background-color: $bg-third-color;
+  height: 500px;
+  margin: auto;
+  border: 3px solid $brand-color;
+}
+.popup__table {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+.popup__cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+.popup__add-comment {
+  background-color: $secondary-color;
+  padding: 20px 10px;
+}
+.popup__add-link {
+  font-weight: $bold;
+  padding-left: 8px;
+  font-size: $text-title-size;
+}
+.close__icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  &:after {
+    content: '';
+    position: absolute;
+    right: -28px;
+    top: -3px;
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-color: $brand-color;
+    background-image: url("../../images/sprites/sprites.png");
+    background-position: -135px -3px;
+    cursor: pointer;
+  }
+}
+.popup__form {
+  padding: 18px 24px;
+  input {
+    padding: 4px 8px;
+  }
+}
+.popup__label-text {
+  font-size: $text-main-size;
+  font-weight: $bold;
+  position: relative;
+}
+.popup__input-box {
+  overflow: hidden;
+}
+.popup__txtarea {
+  resize: none;
+}
+.popup__field {
+  margin-bottom: 10px;
+}
+.popup__label {
+  float: left;
+  width: 100px;
+}
+.txtarea_comment {
+  height: 100px;
+}
+.popup__radio {
+  margin-top: 12px;
+  input[type="radio"] {
+    margin: 0 8px 0 18px
+  }
+}
+.popup__send {
+  text-decoration: none;
+  .btn__submit {
+    padding: 8px 20px;
+    margin: 10px 0;
+    text-transform: none;
   }
 }
