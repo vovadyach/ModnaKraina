@@ -1,0 +1,155 @@
+[33mcommit 33d9583c8c7fe4ab6299cea748b16f3768eae6e9[m
+Author: vd <vd@norse.digital>
+Date:   Thu May 26 09:58:08 2016 +0300
+
+    Made the comments page
+
+[33mcommit 3ffb60c6959b8e1232f9c5caf72223b15fcb30c4[m
+Author: vd <vd@norse.digital>
+Date:   Tue May 24 18:42:05 2016 +0300
+
+    Added the commet page
+
+[33mcommit b34bca1bef3eac42ca07dc0f0464786f4af26d9b[m
+Author: vd <vd@norse.digital>
+Date:   Tue May 24 18:23:50 2016 +0300
+
+    page(wedding): made the wedding catalog with a slider
+
+[33mcommit 05f6d390498c5b9966214bfc955c743b41683e90[m
+Author: vd <vd@norse.digital>
+Date:   Tue May 24 14:54:45 2016 +0300
+
+    Made the order page
+
+[33mcommit fa95da88db0f4f57e33b831ce7575c0401932861[m
+Author: vd <vd@norse.digital>
+Date:   Tue May 24 10:17:23 2016 +0300
+
+    Made the product page
+    
+    Made the aside part of the  order page
+
+[33mcommit 9f43e78e190981e96e637f47c152c92c19ae2c63[m
+Author: vd <vd@norse.digital>
+Date:   Fri May 20 18:13:47 2016 +0300
+
+    Made the dropdown menu
+    
+    Added two sliders to the product page
+
+[33mcommit 58202eeeb11108237e2cc96540b94303473df56e[m
+Author: vd <vd@norse.digital>
+Date:   Fri May 20 13:58:02 2016 +0300
+
+    Made a dropdown menu
+    
+    Fixed some bugs on the catalog page
+
+[33mcommit 46971c93767edf04f44a9722a155ba306bb074a2[m
+Author: vd <vd@norse.digital>
+Date:   Thu May 19 18:46:16 2016 +0300
+
+    Deleted unused imports in teh main style file
+
+[33mcommit 8f31ea6b8416283b4b9b4663105cf2b598765841[m
+Author: vd <vd@norse.digital>
+Date:   Thu May 19 18:40:03 2016 +0300
+
+    Added a hover affect to the accordion menu
+
+[33mcommit 2270d338bf62b72ff19f140787e45b1a6e27a926[m
+Author: vd <vd@norse.digital>
+Date:   Thu May 19 18:07:37 2016 +0300
+
+    Added slink-slider to the catalog page
+    
+    Completed the catalog page
+
+[33mcommit 56b5abf848e05d4d04841de61f2222afcfa95fd0[m
+Author: vd <vd@norse.digital>
+Date:   Thu May 19 14:17:09 2016 +0300
+
+    Added a grid to the catalog
+
+[33mcommit 7bc7518c328b56049663a383ea12ecafe01674ab[m
+Author: vd <vd@norse.digital>
+Date:   Wed May 18 19:12:23 2016 +0300
+
+    Made the pagination
+
+[33mcommit 42fed27070a0d6d2c5b681a04ba7338ffccf94e9[m
+Author: vd <vd@norse.digital>
+Date:   Wed May 18 17:48:29 2016 +0300
+
+    Made the catalog navigation
+    
+    Made the filter navigation
+
+[33mcommit 641d7c452b3f92e61b73e3328618b783e1beb662[m
+Author: vd <vd@norse.digital>
+Date:   Tue May 17 17:49:04 2016 +0300
+
+    Excluded teh build folder
+
+[33mcommit b295d1e800268dff0eee9f1f1a1e7502a390108a[m
+Author: vd <vd@norse.digital>
+Date:   Tue May 17 17:23:01 2016 +0300
+
+    remove build
+
+[33mcommit b872483fdb8706297956be0ee64dec38db573439[m
+Author: vd <vd@norse.digital>
+Date:   Tue May 17 17:13:55 2016 +0300
+
+    Fixed bugs in header, navigation and footer
+
+[33mcommit c1a0451acabb00938083f6f69a2d68a819d68b9d[m
+Author: vd <vd@norse.digital>
+Date:   Mon May 16 18:40:22 2016 +0300
+
+    Made the contact page
+
+[33mcommit 17821c106815520630b6e4aafd57dd25dac712d7[m
+Author: vd <vd@norse.digital>
+Date:   Fri May 13 18:40:18 2016 +0300
+
+    Made the news page
+
+[33mcommit dba685fbce83702ae026469600181d4be5b896b9[m
+Author: vd <vd@norse.digital>
+Date:   Fri May 13 14:15:40 2016 +0300
+
+    Added the aside and the content part
+
+[33mcommit 69f53843337e564421608ac0d97c62838fa34b77[m
+Author: vd <vd@norse.digital>
+Date:   Thu May 12 19:23:04 2016 +0300
+
+    Made the menu
+
+[33mcommit f81510536c686ae63ba9c7036e4ff954d1ed14d9[m
+Author: vd <vd@norse.digital>
+Date:   Thu May 12 17:57:19 2016 +0300
+
+    Made the header
+
+[33mcommit 265eaac237d3e73f5ff6f52af98b6fde683572d1[m
+Author: vd <vd@norse.digital>
+Date:   Thu May 12 13:57:29 2016 +0300
+
+    Created base styles
+    
+    Created variables
+
+[33mcommit 9306f357c0fb2655d46320edcdb2a965908fe6f2[m
+Author: vd <vd@norse.digital>
+Date:   Thu May 12 10:53:01 2016 +0300
+
+    Finished preparation for the project
+
+[33mcommit 73aee0db4f4be08be1a0cf410a37e7250bf8c861[m
+Author: vd <vd@norse.digital>
+Date:   Wed May 11 15:09:56 2016 +0300
+
+    Initialize the project

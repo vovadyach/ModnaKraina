@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <title>Отзывы</title>
     <link rel="stylesheet" href="stylesheets/style.min.css"/>
-    <link rel="stylesheet" href="vendor/slick-carousel/slick/slick.css"/>
-    <link rel="stylesheet" href="vendor/slick-carousel/slick/slick-theme.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 </head>
 <body>
@@ -26,6 +24,7 @@
 
         <div class="content">
             <h3 class="comments__title">Отзывы</h3>
+
             <div class="comment__add-box">
                 <div class="comment__add">
                     <a href="#" class="add__link">
@@ -636,11 +635,12 @@
     </div>
     {{ include('include/footer.html') }}
 </div>
-<div class="popup__menu">
+<div class="popup__menu hidden">
     <div class="popup__table">
         <div class="popup__cell">
             <div class="popup__window">
                 <i class="close__icon"></i>
+
                 <div class="popup__add-comment">
                     <a href="#" class="popup__add-link">
                         <i class="fa fa-plus" aria-hidden="true"></i>
@@ -648,38 +648,63 @@
                 </div>
                 <form action="#" class="popup__form">
                     <div class="popup__field">
-                        <label class="popup__label"><span class="popup__label-text required_field">Ваше имя:</span></label>
+                        <label class="popup__label"><span
+                                class="popup__label-text required_field">Ваше имя:</span></label>
+
                         <div class="popup__input-box">
-                            <input class="btn_block" type="text" />
+                            <input class="btn_block" type="text"/>
                         </div>
                     </div>
                     <div class="popup__field">
                         <label class="popup__label"><span class="popup__label-text required_field">Email:</span></label>
+
                         <div class="popup__input-box">
-                            <input class="btn_block" type="email" />
+                            <input class="btn_block" type="email"/>
                         </div>
                     </div>
                     <div class="popup__field">
                         <label class="popup__label"><span class="popup__label-text required_field">Отзыв:</span></label>
+
                         <div class="popup__input-box">
                             <textarea class="popup__txtarea btn_block txtarea_comment"></textarea>
                         </div>
                     </div>
                     <div class="popup__field">
                         <label class="popup__label"><span class="popup__label-text">Плюсы:</span></label>
+
                         <div class="popup__input-box">
                             <textarea class="popup__txtarea btn_block"></textarea>
                         </div>
                     </div>
                     <div class="popup__field">
                         <label class="popup__label"><span class="popup__label-text">Минусы:</span></label>
+
                         <div class="popup__input-box">
                             <textarea class="popup__txtarea btn_block"></textarea>
+
                             <div class="popup__radio">
-                                <label><span class="popup__label-text">Посоветовали бы друзьям:</span></label>
-                                <input type="radio" name="answer" value="yes"/><span class="popup__label-text">Да</span>
-                                <input type="radio" name="answer" value="no"/><span class="popup__label-text">Нет</span>
-                                <input type="radio" name="answer" value="do not know"/><span class="popup__label-text">Не знаю</span>
+                                <label>
+                                    <span class="popup__label-text">Посоветовали бы друзьям:</span>
+                                    <input type="radio" name="answer" value="yes"/>
+                                    <span class="radio__icon">
+                                        <i class="icon_decor"></i>
+                                    </span>
+                                    <span class="popup__label-text">Да</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="answer" value="no"/>
+                                     <span class="radio__icon">
+                                        <i class="icon_decor"></i>
+                                    </span>
+                                    <span class="popup__label-text">Нет</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="answer" value="do not know"/>
+                                     <span class="radio__icon">
+                                        <i class="icon_decor"></i>
+                                    </span>
+                                    <span class="popup__label-text">Не знаю</span>
+                                </label>
                             </div>
                             <div class="popup__send">
                                 <input class="btn__submit btn-secondary" type="submit" value="Отправить"/>
@@ -694,7 +719,5 @@
 </div>
 <hr class="divider"/>
 <script src="vendor/jquery/dist/jquery.min.js"></script>
-<script src="vendor/slick-carousel/slick/slick.min.js"></script>
-<script src="javascripts/productSlider.js"></script>
 </body>
 </html>
