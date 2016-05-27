@@ -2,69 +2,107 @@
  * Created by vinside on 5/26/16.
  */
 ;(function ($){
+
     var $sliderContainer = $('.slider__container');
     var $sliderCustom = $('.slider__custom');
     var $sliderItem = $(".slider__item");
-
     var $prevSlide = $('.prev__slide');
     var $nextSlide = $('.next__slide');
 
     var $btnsSlide = $().add( $prevSlide).add( $nextSlide );
 
-    var position = 0;
-    var lastPosition = 0;
+    var slideCloneShift = 0;
+    var slidePosition = 0;
+    var lastSlidePosition = 0;
+    var startSlidePosition = 0;
+    //Adds clones to the sliderCustom to achive looping
+    $sliderItem.last().clone().addClass('item_clone').prependTo($sliderCustom);
+    $sliderItem.first().clone().addClass('item_clone').appendTo($sliderCustom);
+
+    var $clonedSlides = $sliderCustom.find(".item_clone");
+
+    slideCloneShift = $clonedSlides.length / 2;
 
     //Calculates containers width
     var containerWidth = $sliderContainer.width();
-    $sliderCustom.width(containerWidth * $sliderItem.length);
+    $sliderCustom.width(containerWidth * ($sliderItem.length + $clonedSlides.length));
     $sliderItem.width(containerWidth);
 
-    window.slideTo = function (pos) {
-        if ( pos < 0 ) pos = 0;
-        if ( pos >= $sliderItem.length ) pos = $sliderItem.length - 1;
+    $sliderCustom.css('transition', 'transition: 0.4s all');
 
-        $sliderCustom.css('left', -pos * containerWidth );
+    window.slideTo = function (slidePosition) {
+
+        var $activeSlide, activleSlideLeft;
+
+        $activeSlide = $sliderItem.eq(slidePosition);
+        //activleSlideLeft = $activeSlide.position().left;
+
+        //$sliderCustom.css('left', -activleSlideLeft);
+        $sliderCustom.css('left', -containerWidth * (slidePosition + slideCloneShift) );
+        $activeSlide.addClass('active').siblings().removeClass("active");
     };
 
-    $btnsSlide.on('click', function (event) {
-        var $this = $(this);
+    function prevSlidePosition () {
+        slidePosition--;
+        if ( slidePosition < -1 ) {
+            console.log('return to last')
 
-        if ( $this.hasClass('next__slide') ) {
-            position++;
+            slidePosition = $sliderItem.length - 1;
+            $sliderCustom.addClass('transition_none');
+            slideTo( slidePosition );
+
+            setTimeout(function () {
+                $sliderCustom.removeClass('transition_none');
+                slidePosition--;
+                slideTo( slidePosition );
+            }, 10);
+
+        } else if ( slidePosition < 0 ) {
+            slideTo(slidePosition);
+
+            console.log('go to clone')
         } else {
-            position--;
+            slideTo(slidePosition);
         }
 
-        if ( position < 0 ) {
-            position = $sliderItem.length - 1;
+        console.log(slidePosition);
+    }
+
+    function nextSlidePosition () {
+        slidePosition++;
+        console.log( slidePosition );
+        if (slidePosition > $sliderItem.length - 1) {
+            slidePosition = -1;
+            $sliderCustom.addClass('transition_none');
+            slideTo( slidePosition );
+
+            setTimeout(function() {
+                $sliderCustom.removeClass('transition_none');
+                slidePosition++;
+                slideTo( slidePosition );
+            }, 10);
+        } else if (slidePosition >= $sliderItem.length - 1) {
+            slideTo(slidePosition);
+        } else {
+            slideTo( slidePosition );
         }
+    }
 
-        if ( position >= $sliderItem.length ) {
-            position = 0;
-        }
-
-        console.log( position );
-
-        slideTo(position);
-
+    $prevSlide.on('click', function (event){
+        prevSlidePosition();
         event.preventDefault();
     });
 
+    $nextSlide.on('click', function (event){
+        nextSlidePosition();
+        event.preventDefault();
+    });
 
-    //$nextSlide.on('click', function () {
-    //    position++;
-    //    var shift;
-    //    if (position <= $sliderItem.length) {
-    //        shift = -position * containerWidth;
-    //        $sliderCustom.css("left", shift);
-    //        if (position > $sliderItem.length) {
-    //            position = 0;
-    //        }
-    //
-    //    }
-    //});
-
-    var shift = -position * containerWidth;
-    $sliderCustom.css("left", shift);
-
+    window.onload = function () {
+        $sliderCustom.addClass('transition_none');
+        slideTo(startSlidePosition);
+        setTimeout(function() {
+            $sliderCustom.removeClass('transition_none');
+        }, 10);
+    }
 })(jQuery);
