@@ -3,142 +3,178 @@
  */
 ;(function ($){
 
-    var $sliderContainer =  $('.slider__container');
-    var $sliderCustom =     $('.slider__custom');
-    var $sliderItem =       $(".slider__item");
+    var $window = $(window);
 
-    var $prevSlide =        $('.prev__slide');
-    var $nextSlide =        $('.next__slide');
+    function __Slider (options) {
+        options = options || {};
 
-    var slideCloneShift = 0;
-    var slidePosition = 0;
-    var startSlidePosition = 0;
+        this.$clonedSlides = $('');
 
-    //Creates variable for the navigation slider
-    var $sliderNavContainer =  $(".slider__nav-container");
-    var $sliderNavCustom =      $(".slider__nav-custom");
-    var $sliderNavItem =        $(".slider__item-nav");
+        this.slideCloneShift = 0;
+        this.slidePosition = 0;
 
-    var slideNavPosition = 0;
-    //NAVIGATION SLIDER
-    //------------------------------------------------------------------------------
-    // Calculates the width of slider nav
-    var containerNavWidth = $sliderNavItem.width();
-    $sliderNavCustom.width(containerNavWidth * $sliderItem.length);
+        this.startSlidePosition = 0;
+        this.slideCloneShift = 0;
 
-    window.slideNavTo = function (slideNavPos) {
-        var $activeSlide;
-        $activeSlide = $sliderNavItem.eq(slideNavPos);
-        $sliderNavCustom.css('left', -containerNavWidth * slideNavPos);
-        $activeSlide.addClass('active').siblings().removeClass('active');
-    };
+        this.slideNavPosition = 0;
+        this.infinite = false;
+        this.containerWidth = 0;
+        this.slideCloneShift = 0;
 
-    //------------------------------------------------------------------------------
-    //ENDNAVIGATION SLIDER
-    //Adds clones to the sliderCustom to achieve looping
-    $sliderItem.last().clone().addClass('item_clone').prependTo($sliderCustom);
-    $sliderItem.first().clone().addClass('item_clone').appendTo($sliderCustom);
+        $.extend(this, options);
 
-    var $clonedSlides = $sliderCustom.find(".item_clone");
+        this.$sliderContainer =  this.$sliderContainer.eq(0);
 
-    slideCloneShift = $clonedSlides.length / 2;
+        this.$sliderCustom =     this.$sliderContainer .find('.slider__custom');
+        this.$sliderItem =       this.$sliderContainer .find(".slider__item");
 
-    //Calculates containers width
-    var containerWidth = $sliderContainer.width();
-    $sliderCustom.width(containerWidth * ($sliderItem.length + $clonedSlides.length));
-    $sliderItem.width(containerWidth);
+        this.$prevSlide =        this.$sliderContainer .find('.prev__slide');
+        this.$nextSlide =        this.$sliderContainer .find('.next__slide');
 
-    $sliderCustom.css('transition', 'transition: 0.4s all');
+        this.$sliderNavContainer = this.$sliderContainer .find(".slider__nav-container");
+        this.$sliderNavCustom =    this.$sliderContainer .find(".slider__nav-custom");
+        this.$sliderNavItem =      this.$sliderContainer .find(".slider__item-nav");
 
-    window.slideTo = function (slidePosition) {
-        var $activeSlide, activleSlideLeft;
-        $activeSlide = $sliderItem.eq(slidePosition);
+        this.init();
+    }
 
-        $sliderCustom.css('left', -containerWidth * (slidePosition + slideCloneShift) );
-        $activeSlide.addClass('active').siblings().removeClass("active");
-    };
+    $.extend(__Slider.prototype, {
+        ololo: 10,
+        init: function () {
+            var self = this;
 
-    function prevSlidePosition () {
-        slidePosition--;
-        if ( slidePosition < -1 ) {
-            slideToPrev();
-        } else if ( slidePosition < 0 ) {
-            slideTo(slidePosition);
+            if ( this.infinite ) {
+                this.$sliderItem.last().clone().addClass('item_clone').prependTo(this.$sliderCustom);
+                this.$sliderItem.first().clone().addClass('item_clone').appendTo(this.$sliderCustom);
+                this.$clonedSlides = this.$sliderCustom.find(".item_clone");
+                this.slideCloneShift = this.$clonedSlides.length / 2;
+            }
 
-            console.log('go to clone')
-        } else {
-            slideTo(slidePosition);
+            this.containerWidth = this.$sliderContainer.width();
+
+            this.$sliderCustom.width( this.containerWidth * ( this.$sliderItem.length + this.$clonedSlides.length));
+            this.$sliderItem.width(this.containerWidth);
+
+            this.$sliderCustom.css('transition', 'transition: 0.4s all');
+
+            $window.load(function () {
+                self.$sliderCustom.addClass('transition_none');
+
+                self.slideTo( self.startSlidePosition );
+
+                setTimeout(function() {
+                    self.$sliderCustom.removeClass('transition_none');
+                }, 10);
+            });
+
+            if ( this.$prevSlide.length ) {
+                this.$prevSlide.on('click', function (event){
+                    self.prevSlidePosition();
+                    event.preventDefault();
+                });
+            }
+
+            if ( this.$nextSlide.length ) {
+                this.$nextSlide.on('click', function (event){
+                    self.nextSlidePosition();
+                    event.preventDefault();
+                });
+            }
+        },
+
+        getSlide: function (pos) {
+            return this.$sliderItem.eq(pos);
+        },
+
+        setActiveSlide: function (pos) {
+            var $activeSlide = this.getSlide(this.slidePosition);
+            $activeSlide.addClass('active').siblings().removeClass("active");
+        },
+
+        getActiveSlide: function () {
+            return false;
+        },
+
+        slideTo: function () {
+            this.$sliderCustom.css('left', -this.containerWidth * (this.slidePosition + this.slideCloneShift) );
+            this.setActiveSlide( this.slidePosition );
+        },
+
+        getCurrentPosition: function () {
+          return this.slidePosition;
+        },
+
+        prevSlidePosition: function () {
+            var self = this;
+
+            this.slidePosition--;
+
+            if ( this.slidePosition < -1 ) {
+                this.slidePosition = this.$sliderItem.length - 1;
+                this.$sliderCustom.addClass('transition_none');
+
+                this.slideTo( self.slidePosition );
+
+                setTimeout(function () {
+                    self.$sliderCustom.removeClass('transition_none');
+                    self.slidePosition--;
+                    self.slideTo( self.slidePosition );
+                }, 10);
+
+            } else if ( this.slidePosition < 0 ) {
+                this.slideTo( this.slidePosition );
+                console.log('go to clone')
+            } else {
+                this.slideTo(self.slidePosition);
+            }
+        },
+
+        nextSlidePosition: function () {
+            var self = this;
+            this.slidePosition++;
+            //console.log( slidePosition );
+            if (this.slidePosition > this.$sliderItem.length - 1) {
+
+                this.slidePosition = -1;
+                this.$sliderCustom.addClass('transition_none');
+
+                this.slideTo( this.slidePosition );
+
+                setTimeout(function() {
+                    self.$sliderCustom.removeClass('transition_none');
+                    self.slidePosition++;
+                    self.slideTo( self.slidePosition );
+                }, 10);
+
+            } else if ( this.slidePosition >= this.$sliderItem.length - 1) {
+                this.slideTo( this.slidePosition );
+            } else {
+                this.slideTo( this.slidePosition );
+            }
         }
 
-        console.log(slidePosition);
-    }
-
-    function slideToPrev() {
-        console.log('return to last');
-        skipPrevTransition();
-
-        setTimeout(function () {
-            $sliderCustom.removeClass('transition_none');
-            slidePosition--;
-            slideTo( slidePosition );
-        }, 10);
-    }
-
-    function skipPrevTransition() {
-        slidePosition = $sliderItem.length - 1;
-        $sliderCustom.addClass('transition_none');
-
-        slideTo( slidePosition );
-    }
-
-    function nextSlidePosition () {
-        slidePosition++;
-        console.log( slidePosition );
-        if (slidePosition > $sliderItem.length - 1) {
-            slideToNext();
-            console.log('go to clone')
-
-        } else if (slidePosition >= $sliderItem.length - 1) {
-            slideTo(slidePosition);
-        } else {
-            slideTo( slidePosition );
-        }
-    }
-
-    function slideToNext() {
-        console.log('go to next');
-        skipNextTransition();
-
-        setTimeout(function() {
-            $sliderCustom.removeClass('transition_none');
-            slidePosition++;
-            slideTo( slidePosition );
-        }, 10);
-    }
-
-    function skipNextTransition() {
-        slidePosition = -1;
-        $sliderCustom.addClass('transition_none');
-
-        slideTo( slidePosition );
-    }
-
-    $prevSlide.on('click', function (event){
-        prevSlidePosition();
-        event.preventDefault();
     });
 
-    $nextSlide.on('click', function (event){
-        nextSlidePosition();
-        event.preventDefault();
+
+    window.Slider = __Slider;
+
+})(jQuery);
+
+
+/**
+ * Created by vinside on 5/26/16.
+ */
+;(function ($){
+
+    window.slider2 = new Slider({
+        $sliderContainer: $('.slider2')
     });
 
-    window.onload = function () {
-        $sliderCustom.addClass('transition_none');
-        slideTo(startSlidePosition);
-        setTimeout(function() {
-            $sliderCustom.removeClass('transition_none');
-        }, 10);
-    }
+    window.slider1 = new Slider({
+        $sliderContainer: $('.slider1'),
+        infinite: true
+    });
+
+    //slider.getCurrentPosition();
 
 })(jQuery);
