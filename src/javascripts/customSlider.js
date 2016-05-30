@@ -166,12 +166,13 @@
  */
 ;(function ($){
 
-    window.slider2 = new Slider({
-        $sliderContainer: $('.slider2')
-    });
-
     window.slider1 = new Slider({
         $sliderContainer: $('.slider1'),
+        infinite: true
+    });
+
+    window.slider2 = new Slider({
+        $sliderContainer: $('.slider2'),
         infinite: true
     });
 
