@@ -155,7 +155,6 @@
 
     });
 
-
     window.Slider = __Slider;
 
 })(jQuery);
