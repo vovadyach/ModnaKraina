@@ -20,22 +20,25 @@
         this.containerWidth = 0;
 
         this.onNextSlide = null;
+        this.onPrevSlide = null;
+        this.onSlideChange = null;
+        this.speed = 300;
 
         $.extend(this, options);
 
         this.slideCloneShift = 0;
 
-        this.$sliderContainer =         this.$sliderContainer.eq(0);
+        this.$sliderContainer = this.$sliderContainer.eq(0);
 
-        this.$sliderCustom =            this.$sliderContainer .find('.slider__custom');
-        this.$sliderItem =              this.$sliderContainer .find(".slider__item");
+        this.$sliderCustom = this.$sliderContainer.find('.slider__custom');
+        this.$sliderItem = this.$sliderContainer.find(".slider__item");
 
-        this.$prevSlide =               this.$sliderContainer .find('.prev__slide');
-        this.$nextSlide =               this.$sliderContainer .find('.next__slide');
+        this.$prevSlide = this.$sliderContainer.find('.prev__slide');
+        this.$nextSlide = this.$sliderContainer.find('.next__slide');
 
-        this.$sliderNavContainer =      this.$sliderContainer .find(".slider__nav-container");
-        this.$sliderNavCustom =         this.$sliderContainer .find(".slider__nav-custom");
-        this.$sliderNavItem =           this.$sliderContainer .find(".slider__item-nav");
+        this.$sliderNavContainer = this.$sliderContainer.find(".slider__nav-container");
+        this.$sliderNavCustom = this.$sliderContainer.find(".slider__nav-custom");
+        this.$sliderNavItem = this.$sliderContainer.find(".slider__item-nav");
 
         this.init();
     }
@@ -50,21 +53,15 @@
                 //this.$sliderItem.last().clone().addClass('item_clone').prependTo(this.$sliderCustom);
                 //this.$sliderItem.first().clone().addClass('item_clone').appendTo(this.$sliderCustom);
 
-
-                //debugger;
-
                 var leftClone = this.$sliderItem.slice(0, this.slidesToShow).clone()
                     .addClass('item_clone');
 
                 var rightCLone = this.$sliderItem.slice(this.$sliderItem.length - this.slidesToShow, this.$sliderItem.length)
                     .clone().addClass('item_clone');
 
-
                 rightCLone.each(function () {
                     console.log( rightCLone.data() )
                 });
-
-
 
                 this.$sliderCustom.append(leftClone);
                 this.$sliderCustom.prepend(rightCLone);
@@ -114,7 +111,7 @@
         },
 
         setActiveSlide: function (pos) {
-            var $activeSlide = this.getSlide(this.slidePosition);
+            var $activeSlide = this.getSlide(pos);
             $activeSlide.addClass('active').siblings().removeClass("active");
         },
 
@@ -126,8 +123,10 @@
             var left = -this.$sliderItem.width() * (slidePosition + this.slideCloneShift);
             this.$sliderCustom.css('left', left );
             console.log( left );
-            //
-            //debugger;
+
+            if ( typeof this.onSlideChange === "function" ) {
+                this.onSlideChange(this.slidePosition);
+            }
 
             this.setActiveSlide( this.slidePosition );
         },
@@ -158,6 +157,10 @@
             } else {
                 this.slideTo(this.slidePosition);
             }
+
+            if (typeof this.onPrevSlide === 'function') {
+                this.onPrevSlide(this.slidePosition);
+            }
         },
 
         nextSlidePosition: function () {
@@ -183,11 +186,10 @@
                 this.slideTo( this.slidePosition );
             }
 
-            if ( typeof this.onNextSlide === 'function' ) {
-                this.onNextSlide();
+            if (typeof this.onNextSlide === 'function') {
+                this.onNextSlide(this.slidePosition);
             }
         }
-
     });
 
     window.Slider = __Slider;
@@ -203,8 +205,12 @@
     window.slider1 = new Slider({
         $sliderContainer: $('.slider1'),
         infinite: true,
-        slidesToShow: 1
-
+        slidesToShow: 1,
+        onSlideChange: function (position) {
+            //debugger;
+            slider2.slideTo(position);
+            slider2.setActiveSlide(position);
+        }
     });
     //
     window.slider2 = new Slider({
@@ -213,6 +219,9 @@
         slidesToShow: 5,
         onNextSlide: function () {
             slider1.nextSlidePosition();
+        },
+        onPrevSlide: function () {
+            slider1.prevSlidePosition();
         }
     });
     //
