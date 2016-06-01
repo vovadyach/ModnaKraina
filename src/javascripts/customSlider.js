@@ -10,30 +10,32 @@
 
         this.$clonedSlides = $('');
 
-        this.slideCloneShift = 0;
         this.slidePosition = 0;
-
         this.startSlidePosition = 0;
-        this.slideCloneShift = 0;
+
+        this.slidesToShow = 1;
 
         this.slideNavPosition = 0;
         this.infinite = false;
         this.containerWidth = 0;
-        this.slideCloneShift = 0;
+
+        this.onNextSlide = null;
 
         $.extend(this, options);
 
-        this.$sliderContainer =  this.$sliderContainer.eq(0);
+        this.slideCloneShift = 0;
 
-        this.$sliderCustom =     this.$sliderContainer .find('.slider__custom');
-        this.$sliderItem =       this.$sliderContainer .find(".slider__item");
+        this.$sliderContainer =         this.$sliderContainer.eq(0);
 
-        this.$prevSlide =        this.$sliderContainer .find('.prev__slide');
-        this.$nextSlide =        this.$sliderContainer .find('.next__slide');
+        this.$sliderCustom =            this.$sliderContainer .find('.slider__custom');
+        this.$sliderItem =              this.$sliderContainer .find(".slider__item");
 
-        this.$sliderNavContainer = this.$sliderContainer .find(".slider__nav-container");
-        this.$sliderNavCustom =    this.$sliderContainer .find(".slider__nav-custom");
-        this.$sliderNavItem =      this.$sliderContainer .find(".slider__item-nav");
+        this.$prevSlide =               this.$sliderContainer .find('.prev__slide');
+        this.$nextSlide =               this.$sliderContainer .find('.next__slide');
+
+        this.$sliderNavContainer =      this.$sliderContainer .find(".slider__nav-container");
+        this.$sliderNavCustom =         this.$sliderContainer .find(".slider__nav-custom");
+        this.$sliderNavItem =           this.$sliderContainer .find(".slider__item-nav");
 
         this.init();
     }
@@ -42,18 +44,43 @@
         ololo: 10,
         init: function () {
             var self = this;
+            var slideWidth;
 
             if ( this.infinite ) {
-                this.$sliderItem.last().clone().addClass('item_clone').prependTo(this.$sliderCustom);
-                this.$sliderItem.first().clone().addClass('item_clone').appendTo(this.$sliderCustom);
-                this.$clonedSlides = this.$sliderCustom.find(".item_clone");
-                this.slideCloneShift = this.$clonedSlides.length / 2;
+                //this.$sliderItem.last().clone().addClass('item_clone').prependTo(this.$sliderCustom);
+                //this.$sliderItem.first().clone().addClass('item_clone').appendTo(this.$sliderCustom);
+
+
+                //debugger;
+
+                var leftClone = this.$sliderItem.slice(0, this.slidesToShow).clone()
+                    .addClass('item_clone');
+
+                var rightCLone = this.$sliderItem.slice(this.$sliderItem.length - this.slidesToShow, this.$sliderItem.length)
+                    .clone().addClass('item_clone');
+
+
+                rightCLone.each(function () {
+                    console.log( rightCLone.data() )
+                });
+
+
+
+                this.$sliderCustom.append(leftClone);
+                this.$sliderCustom.prepend(rightCLone);
+
+                this.$clonedSlides = this.$clonedSlides.add(leftClone).add(rightCLone);
+                this.slideCloneShift = (leftClone.length);
             }
 
             this.containerWidth = this.$sliderContainer.width();
 
-            this.$sliderCustom.width( this.containerWidth * ( this.$sliderItem.length + this.$clonedSlides.length));
-            this.$sliderItem.width(this.containerWidth);
+
+            slideWidth = this.containerWidth / this.slidesToShow;
+                //this.containerWidth * ( this.$sliderItem.length + this.$clonedSlides.length ) / this.slidesToShow;
+            this.$sliderCustom.width( slideWidth * (this.$sliderItem.length + this.$clonedSlides.length) );
+            this.$sliderItem.width(slideWidth);
+            this.$clonedSlides.width(slideWidth);
 
             this.$sliderCustom.css('transition', 'transition: 0.4s all');
 
@@ -95,8 +122,13 @@
             return false;
         },
 
-        slideTo: function () {
-            this.$sliderCustom.css('left', -this.containerWidth * (this.slidePosition + this.slideCloneShift) );
+        slideTo: function (slidePosition) {
+            var left = -this.$sliderItem.width() * (slidePosition + this.slideCloneShift);
+            this.$sliderCustom.css('left', left );
+            console.log( left );
+            //
+            //debugger;
+
             this.setActiveSlide( this.slidePosition );
         },
 
@@ -114,7 +146,6 @@
                 this.$sliderCustom.addClass('transition_none');
 
                 this.slideTo( self.slidePosition );
-
                 setTimeout(function () {
                     self.$sliderCustom.removeClass('transition_none');
                     self.slidePosition--;
@@ -122,10 +153,10 @@
                 }, 10);
 
             } else if ( this.slidePosition < 0 ) {
-                this.slideTo( this.slidePosition );
+                this.slideTo( self.slidePosition );
                 console.log('go to clone')
             } else {
-                this.slideTo(self.slidePosition);
+                this.slideTo(this.slidePosition);
             }
         },
 
@@ -151,6 +182,10 @@
             } else {
                 this.slideTo( this.slidePosition );
             }
+
+            if ( typeof this.onNextSlide === 'function' ) {
+                this.onNextSlide();
+            }
         }
 
     });
@@ -167,14 +202,27 @@
 
     window.slider1 = new Slider({
         $sliderContainer: $('.slider1'),
-        infinite: true
-    });
+        infinite: true,
+        slidesToShow: 1
 
+    });
+    //
     window.slider2 = new Slider({
         $sliderContainer: $('.slider2'),
-        infinite: true
+        infinite: true,
+        slidesToShow: 5,
+        onNextSlide: function () {
+            slider1.nextSlidePosition();
+        }
     });
-
-    //slider.getCurrentPosition();
+    //
+    //$('.slider2 .slider__item:not(.item_clone)').on('click', function () {
+    //
+    //    var position = slider2.getCurrentPosition();
+    //
+    //
+    //
+    //    slider1.slideTo( position );
+    //});
 
 })(jQuery);
