@@ -9,7 +9,7 @@
 }
 .slider__view {
   position: absolute;
-  //overflow: hidden;
+  overflow: hidden;
   z-index: 0;
   top: 0;
   bottom: 0;
@@ -120,6 +120,11 @@
     &.active {
       .slider__image {
         border-color: red;
+      }
+      &.item_clone {
+        .slider__image {
+          border-color: red;
+        }
       }
     }
   }

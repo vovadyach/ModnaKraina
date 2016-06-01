@@ -208,8 +208,8 @@
         slidesToShow: 1,
         onSlideChange: function (position) {
             //debugger;
-            slider2.slideTo(position);
-            slider2.setActiveSlide(position);
+                //slider2.slideTo(position);
+            //slider2.setActiveSlide(position);
         }
     });
     //
@@ -224,6 +224,8 @@
             slider1.prevSlidePosition();
         }
     });
+
+
     //
     //$('.slider2 .slider__item:not(.item_clone)').on('click', function () {
     //
