@@ -79,7 +79,7 @@
             this.$sliderItem.width(slideWidth);
             this.$clonedSlides.width(slideWidth);
 
-            this.$sliderCustom.css('transition', 'transition: 0.4s all');
+           // this.$sliderCustom.css('transition', 'transition: 0.4s all');
 
             $window.load(function () {
                 self.$sliderCustom.addClass('transition_none');
@@ -112,7 +112,13 @@
 
         setActiveSlide: function (pos) {
             var $activeSlide = this.getSlide(pos);
+
+            if ( $activeSlide === -1/*this.$sliderCustom.css("left", "0px")*/) {
+                $(".slide__item.item_clone").addClass('active').siblings().removeClass("active");
+            }
+
             $activeSlide.addClass('active').siblings().removeClass("active");
+
         },
 
         getActiveSlide: function () {
@@ -120,10 +126,10 @@
         },
 
         slideTo: function (slidePosition) {
+
             var left = -this.$sliderItem.width() * (slidePosition + this.slideCloneShift);
             this.$sliderCustom.css('left', left );
             console.log( left );
-
             if ( typeof this.onSlideChange === "function" ) {
                 this.onSlideChange(this.slidePosition);
             }
@@ -153,7 +159,8 @@
 
             } else if ( this.slidePosition < 0 ) {
                 this.slideTo( self.slidePosition );
-                console.log('go to clone')
+
+                console.log('go to clone');
             } else {
                 this.slideTo(this.slidePosition);
             }
@@ -216,7 +223,7 @@
     window.slider2 = new Slider({
         $sliderContainer: $('.slider2'),
         infinite: true,
-        slidesToShow: 5,
+        slidesToShow: 1,
         onNextSlide: function () {
             slider1.nextSlidePosition();
         },
